@@ -37,7 +37,7 @@
                         <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Clave</span>
                         </div>
-                        <input type="text" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Clave" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Clave" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <button class="btn btn-outline-success btn-block">Enviar</button>
                 </form>
