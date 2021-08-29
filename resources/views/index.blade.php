@@ -108,6 +108,7 @@
 <section class="container-fluid">
     <h2 class="text-center p-3">Nuevos productos</h2>
     <div class="row">
+        @foreach ($products as $product)
         <div class="col-6 col-md-3 col-lg-3">
             <div class="card border-0 mb-3">
                 <span class="ml-2 p-2 card-ofert">Oferta</span>
@@ -115,10 +116,10 @@
                     <img class="card-img" src="{{asset('images/1.jpg')}}" alt="">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Microsoft</h5>
-                    <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    <span class="old-price">$25</span>
-                    <span class="price"><b>$22</b></span>
+                    <h5 class="card-title">{{ $product->name }}</h5>
+                    <p class="card-description">{{ $product->description }}</p>
+                    <span class="old-price">{{ $product->sale_price - 20 }}</span>
+                    <span class="price"><b>{{ $product->sale_price }}</b></span>
                 </div>
                 <div class="card-footer border-0 d-flex justify-content-between">
                     <button class="btn btn-yellow btn-sm btn-md btn-lg">
@@ -130,72 +131,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 col-md-3 col-lg-3">
-            <div class="card border-0 mb-3">
-                <span class="ml-2 p-2 card-ofert">Oferta</span>
-                <div class="m-auto">
-                    <img class="card-img" src="{{asset('images/1.jpg')}}" alt="">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Microsoft</h5>
-                    <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    <span class="old-price">$25</span>
-                    <span class="price"><b>$22</b></span>
-                </div>
-                <div class="card-footer border-0 d-flex justify-content-between">
-                    <button class="btn btn-yellow btn-sm btn-md btn-lg">
-                        Carrito
-                    </button>
-                    <button class="btn btn-yellow btn-sm-none">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-3 col-lg-3">
-            <div class="card border-0 mb-3">
-                <span class="ml-2 p-2 card-ofert">Oferta</span>
-                <div class="m-auto">
-                    <img class="card-img" src="{{asset('images/1.jpg')}}" alt="">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Microsoft</h5>
-                    <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    <span class="old-price">$25</span>
-                    <span class="price"><b>$22</b></span>
-                </div>
-                <div class="card-footer border-0 d-flex justify-content-between">
-                    <button class="btn btn-yellow btn-sm btn-md btn-lg">
-                        Carrito
-                    </button>
-                    <button class="btn btn-yellow btn-sm-none">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-3 col-lg-3">
-            <div class="card border-0 mb-3">
-                <span class="ml-2 p-2 card-ofert">Oferta</span>
-                <div class="m-auto">
-                    <img class="card-img" src="{{asset('images/1.jpg')}}" alt="">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Microsoft</h5>
-                    <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    <span class="old-price">$25</span>
-                    <span class="price"><b>$22</b></span>
-                </div>
-                <div class="card-footer border-0 d-flex justify-content-between">
-                    <button class="btn btn-yellow btn-sm btn-md btn-lg">
-                        Carrito
-                    </button>
-                    <button class="btn btn-yellow btn-sm-none">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
 <section class="container-fluid">
