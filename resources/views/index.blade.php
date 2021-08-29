@@ -122,10 +122,19 @@
                     <span class="price"><b>{{ $product->sale_price }}</b></span>
                 </div>
                 <div class="card-footer border-0 d-flex justify-content-between">
-                    <button class="btn btn-yellow btn-sm btn-md btn-lg">
-                        Carrito
-                    </button>
-                    <button class="btn btn-yellow btn-sm-none">
+                    <form action="{{ route('cart.store') }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                        <input type="hidden" value="{{ $product->name }}" id="name" name="name">
+                        <input type="hidden" value="{{ $product->description }}" id="details" name="details">
+                        <input type="hidden" value="{{ $product->sale_price }}" id="price" name="price">
+                        <input type="hidden" value="{{ $product->image }}" id="image" name="image">
+                        <input type="hidden" value="1" id="quantity" name="quantity">
+                        <button class="btn btn-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
+                            <i class="fa fa-shopping-cart"></i> Agregar
+                        </button>
+                    </form>
+                    <button class="btn btn-primary btn-sm btn-md">
                         Comprar
                     </button>
                 </div>

@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 /** Paypal Details classes **/
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
@@ -26,6 +28,11 @@ class PaymentController extends Controller
             new OAuthTokenCredential(config('paypal.client_id'), config('paypal.secret'))
         );
         $this->api_context->setConfig(config('paypal.settings'));
+    }
+    public function index(){
+        $idUser = Auth::user()->id;
+        $cartCollection = \Cart::session($idUser)->getContent();
+        return view('checkout-page', compact('cartCollection'));
     }
 /**
     ** This method sets up the paypal payment.

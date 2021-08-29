@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-            'name' => 'Pantalla 4K',
+            'name' => 'Pantalla 5K',
             'description' => 'Pantlla full hd 4k de color negro',
             'purchase_price' => 250,
             'sale_price' => 300,
