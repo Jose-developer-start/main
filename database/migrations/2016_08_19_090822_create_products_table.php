@@ -20,10 +20,12 @@ class CreateProductsTable extends Migration
             $table->decimal('purchase_price',8,2);
             $table->decimal('sale_price',8,2);
             $table->string('model');
-            $table->string('brand');
             $table->string('image');
-            $table->foreignId('id_supplier');
-            $table->foreignId('id_category');
+            $table->foreignId('brand_id')->references('id')->on('brands');
+
+            $table->foreignId('supplier_id')->references('id')->on('suppliers');
+            
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

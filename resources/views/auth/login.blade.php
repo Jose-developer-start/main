@@ -8,6 +8,7 @@
         </div>
         <div class="card-body">
             <form action="" method="POST">
+                @csrf
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Email</span>
@@ -18,7 +19,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Clave</span>
                     </div>
-                    <input type="text" name="password" class="form-control" placeholder="Clave" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" name="password" class="form-control" placeholder="Clave" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <button class="btn btn-outline-success btn-block">Ingresar</button>
             </form>

@@ -15,10 +15,11 @@ class CreateSaleDetailsTable extends Migration
     {
         Schema::create('sale_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_sale');
-            $table->foreignId('id_product');
+            $table->unsignedInteger('id_sale');
             $table->decimal('unit_price',8,2);
             $table->integer('quanty');
+            $table->foreignId('sale_id')->references('id')->on('sales');
+            $table->foreignId('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

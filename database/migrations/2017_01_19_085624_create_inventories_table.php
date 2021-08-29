@@ -15,9 +15,9 @@ class CreateInventoriesTable extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_product');
             $table->integer('stock');
             $table->tinyInteger('status');
+            $table->foreignId('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
