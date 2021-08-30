@@ -10997,3 +10997,14 @@ a.text-dark:focus {
   height: 180px;
 }
 
+.error {
+  font-size: 13px;
+  color: #fd1010;
+}
+
+/*Style cart*/
+
+.cart {
+  height: 55%;
+}
+

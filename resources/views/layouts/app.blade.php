@@ -25,6 +25,7 @@
     <div id="app">
       @include('partials.navbar')
         <main>
+          @include('partials.messages')
             @yield('content')
         </main>
       @include('partials.footer')

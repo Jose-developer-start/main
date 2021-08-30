@@ -23,7 +23,6 @@
           </div>
         </li>
       </ul>
-      @auth
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -48,7 +47,6 @@
             </li>
         </ul>
       </div>
-      @endauth
       <ul class="navbar-nav">
         @guest
         <li class="nav-item">

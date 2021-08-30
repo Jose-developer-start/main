@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-md-4 offset-md-4">
+<div class="col-md-4 offset-md-4 my-4">
     <div class="card">
         <div class="card-header">
             <h3>Ingresar</h3>
@@ -9,17 +9,23 @@
         <div class="card-body">
             <form action="" method="POST">
                 @csrf
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Email</span>
+                <div class="mb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="text" name="email" class="form-control @error('password') is-invalid @enderror" placeholder="Correo" value="{{ old('email') }}" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
-                    <input type="text" name="email" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
+                    {!! $errors->first('email','<span class="error">:message</span>') !!}
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Clave</span>
+                <div class="mb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Clave</span>
+                        </div>
+                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Clave" value="{{ old('password') }}" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
-                    <input type="password" name="password" class="form-control" placeholder="Clave" aria-label="Username" aria-describedby="basic-addon1">
+                    {!! $errors->first('password','<span class="error">:message</span>') !!}
                 </div>
                 <button class="btn btn-outline-success btn-block">Ingresar</button>
             </form>

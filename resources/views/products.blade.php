@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 60px">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Tecnlogy BOX</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+        </ol>
+    </nav>
     <h1 class="text-center p-4">Compra los mejores productos</h1>
     <div class="d-flex justify-content-center mb-4">
         <form action="" method="POST" class="form-inline my-2 my-lg-0">

@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Sale;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /** Paypal Details classes **/
 use PayPal\Rest\ApiContext;
@@ -31,29 +35,29 @@ class PaymentController extends Controller
     public function index(){
         return view('checkout-page');
     }
-/**
+    /**
     ** This method sets up the paypal payment.
     **/
     public function createPayment(Request $request){
         // Amount received as request is validated here.
         $request->validate(['amount' => 'required|numeric']);
-        $pay_amount = $request->amount;
+        $pay_amount = \Cart::getTotal(); // Total Carrito
         // We create the payer and set payment method, could be any of "credit_card", "bank", "paypal", "pay_upon_invoice", "carrier", "alternate_payment". 
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         // Create and setup items being paid for.. Could multiple items like: 'item1, item2 etc'.
         $item = new Item();
-        $item->setName('Paypal Payment')->setCurrency('EUR')->setQuantity(1)->setPrice($pay_amount);
+        $item->setName('Paypal Payment')->setCurrency('USD')->setQuantity(1)->setPrice($pay_amount);
         // Create item list and set array of items for the item list.
+
         $itemList = new ItemList();
         $itemList->setItems(array($item));
         // Create and setup the total amount.
         $amount = new Amount();
-        $amount->setCurrency('EUR')->setTotal($pay_amount);
+        $amount->setCurrency('USD')->setTotal($pay_amount);
         // Create a transaction and amount and description.
         $transaction = new Transaction();
-        $transaction->setAmount($amount)->setItemList($itemList)
-        ->setDescription('Laravel Paypal Payment Tutorial');
+        $transaction->setAmount($amount)->setItemList($itemList)->setDescription('Pagando productos de TECH BOX');
         //You can set custom data with '->setCustom($data)' or put it in a session.
         // Create a redirect urls, cancel url brings us back to current page, return url takes us to confirm payment.
         $redirect_urls = new RedirectUrls();
@@ -68,9 +72,9 @@ class PaymentController extends Controller
         try {
             $payment->create($this->api_context);
         } catch (PayPalConnectionException $ex){
-            return back()->withError('Some error occur, sorry for inconvenient');
+            return back()->withError('Ocurrió algún error, disculpe las molestias');
         } catch (Exception $ex) {
-            return back()->withError('Some error occur, sorry for inconvenient');
+            return back()->withError('Ocurrió algún error, disculpe las molestias');
         }
         // We get 'approval_url' a paypal url to go to for payments.
         foreach($payment->getLinks() as $link) {
@@ -86,7 +90,7 @@ class PaymentController extends Controller
             return redirect($redirect_url);
         }
         // If we don't have redirect url, we have unknown error.
-        return redirect()->back()->withError('Unknown error occurred');
+        return redirect()->back()->withError('Ocurrió un error desconocido');
         }
         /**
         ** This method confirms if payment with paypal was processed successful and then execute the payment, 
@@ -94,8 +98,9 @@ class PaymentController extends Controller
         **/
         public function confirmPayment(Request $request){
         // If query data not available... no payments was made.
-        if (empty($request->query('paymentId')) || empty($request->query('PayerID')) || empty($request->query('token')))
-            return redirect('/checkout')->withError('Payment was not successful.');
+        if (empty($request->query('paymentId')) || empty($request->query('PayerID')) || empty($request->query('token'))){
+            return redirect('/checkout')->withError('El pago no se realizó correctamente.');
+        }
         // We retrieve the payment from the paymentId.
         $payment = Payment::get($request->query('paymentId'), $this->api_context);
         // We create a payment execution with the PayerId
@@ -104,10 +109,23 @@ class PaymentController extends Controller
         // Then we execute the payment.
         $result = $payment->execute($execution, $this->api_context);
         // Get value store in array and verified data integrity
+        //UPDATE SALE
+        $newSale = Sale::create([
+            'date' => Carbon::now()->format('Y-m-d'),
+            'payment' => \Cart::getTotal(),
+            'discount' => 0.0,
+            'paypal_data' => $payment,
+            'quanty_products' => \Cart::getTotalQuantity(),
+            'status' => 1,
+            'user_id' => Auth::user()->id,
+        ]);
         // $value = $request->session()->pull('key', 'default');
         // Check if payment is approved
-        if ($result->getState() != 'approved')
-                return redirect('/checkout')->withError('Payment was not successful.');
-                return redirect('/checkout')->withSuccess('Payment made successfully');
+        if ($result->getState() != 'approved'){
+            return redirect('/checkout')->withError('El pago no se realizó correctamente.');
+        }else{
+            \Cart::clear();
+            return redirect('/checkout')->withSuccess('Pago realizado con éxito');
+        }
     }
 }
