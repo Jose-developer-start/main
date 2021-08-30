@@ -22,7 +22,7 @@
     <li class="list-group-item">
         <div class="row">
             <div class="col-lg-10">
-                <b>Total: </b>${{ \Cart::session()->getTotal() }}
+                <b>Total: </b>${{ \Cart::getTotal() }}
             </div>
             <div class="col-lg-2">
                 <form action="{{ route('cart.clear') }}" method="POST">

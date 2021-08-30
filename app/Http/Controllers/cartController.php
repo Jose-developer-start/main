@@ -14,13 +14,11 @@ class cartController extends Controller
         //$this->middleware('auth');
     }
     public function cart(){
-        $idUser = Auth::user()->id;
-        $cartCollection = \Cart::session($idUser)->getContent();
+        $cartCollection = \Cart::getContent();
         return view('cart', compact('cartCollection'));
     }
     public function add(){
-        $idUser = Auth::user()->id;
-        \Cart::session($idUser)->add(
+        \Cart::add(
             array(
                 'id' => request()->id,
                 'name' => request()->name,
@@ -37,8 +35,7 @@ class cartController extends Controller
     }
     public function update(){
         $idProduct = request()->id;
-        $idUser = Auth::user()->id;
-        \Cart::session($idUser)->update($idProduct, [
+        \Cart::update($idProduct, [
             'quantity' => [
                 'relative' => false,
                 'value' => request()->quantity 
@@ -48,13 +45,11 @@ class cartController extends Controller
     }
     public function remove(){
         $idProduct = request()->id;
-        $idUser = Auth::user()->id;
-        \Cart::session($idUser)->remove($idProduct);
+        \Cart::remove($idProduct);
         return redirect()->route('cart.index');
     }
     public function clear(){
-        $idUser = Auth::user()->id;
-        \Cart::session($idUser)->clear();
+        \Cart::clear();
         return redirect()->route('cart.index');
     }
 }

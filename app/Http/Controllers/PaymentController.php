@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 /** Paypal Details classes **/
 use PayPal\Rest\ApiContext;
@@ -30,9 +29,7 @@ class PaymentController extends Controller
         $this->api_context->setConfig(config('paypal.settings'));
     }
     public function index(){
-        $idUser = Auth::user()->id;
-        $cartCollection = \Cart::session($idUser)->getContent();
-        return view('checkout-page', compact('cartCollection'));
+        return view('checkout-page');
     }
 /**
     ** This method sets up the paypal payment.
