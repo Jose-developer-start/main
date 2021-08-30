@@ -8,4 +8,8 @@ class Product extends Model
 {
     //table
     protected $table = "products";
+
+    public function Category(){
+        return $this->belongsTo('App\Category');
+    }
 }

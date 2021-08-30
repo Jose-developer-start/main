@@ -13,8 +13,21 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Pantallas',
-            'image' => 'pantallas.png'
+            'name' => 'Routers',
+            'image' => 'routers.png'
         ]);
+        DB::table('categories')->insert([
+            'name' => 'Memorias USB',
+            'image' => 'Memorias USB.png'
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Proyectores',
+            'image' => 'Proyectores.png'
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Teclado',
+            'image' => 'Teclados.png'
+        ]);
+
     }
 }

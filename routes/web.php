@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/','MainController@index'); //Vista principal
+Route::get('/','HomeController@index'); //Vista principal
 
 
 
@@ -14,9 +14,9 @@ Route::get('/checkout', 'PaymentController@index')->middleware('auth');
 Route::post('/checkout', 'PaymentController@createPayment')->name('create-payment');
 Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
 
-//Routas
-
-Route::get('/productos','MainController@show')->name('main.productos');
+//Routas de productos
+Route::get('/productos','ProductController@show_products')->name('main.productos');
+Route::post('/productos','ProductController@search_product')->name('search_product');
 //Carrito
 Route::get('/carrito', 'cartController@cart')->name('cart.index');
 Route::post('/add', 'cartController@add')->name('cart.store');
