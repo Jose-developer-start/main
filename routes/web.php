@@ -15,10 +15,7 @@ Route::post('/checkout', 'PaymentController@createPayment')->name('create-paymen
 Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
 
 //Routas de productos
-Route::get('/productos','ProductController@show_products')->name('main.productos');
-Route::post('/productos','ProductController@search_product')->name('search_product');
-//Prueba
-//Route::get('/product/{category?}','ProductController@product')->name('search_product');
+Route::get('/productos/{category?}','ProductController@show_products')->name('main.productos');
 //Carrito
 Route::get('/carrito', 'cartController@cart')->name('cart.index');
 Route::post('/add', 'cartController@add')->name('cart.store');
