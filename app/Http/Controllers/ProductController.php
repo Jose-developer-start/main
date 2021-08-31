@@ -20,8 +20,7 @@ class ProductController extends Controller
             return view('products', compact('products','categories'));
         }
     }
-    public function show_product($name = null){
-        $product = Product::where('name',$name)->get();
+    public function show_product(Product $product = null){//Routing model binding
         return view('show-product', compact('product'));
     }
 

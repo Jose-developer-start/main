@@ -12,4 +12,11 @@ class Product extends Model
     public function Category(){
         return $this->belongsTo('App\Category');
     }
+    public function stock(){
+        return $this->hasOne('App\Inventory');
+    }
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }

@@ -16,7 +16,7 @@ Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-paymen
 
 //Routas de productos
 Route::get('/productos/{category?}','ProductController@show_products')->name('main.productos');
-Route::get('/ver/{name?}','ProductController@show_product')->name('showProduct');
+Route::get('/ver/{product?}','ProductController@show_product')->name('showProduct');
 //Carrito
 Route::get('/carrito', 'cartController@cart')->name('cart.index');
 Route::post('/add', 'cartController@add')->name('cart.store');
