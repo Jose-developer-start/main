@@ -53,7 +53,7 @@
                             <p>
                                 <b><a href="/shop/{{ $item->name }}">{{ $item->name }}</a></b><br>
                                 <b>Descripción</b> {{ $item->attributes->details }} <br>
-                                <b>Price: </b>${{ $item->price }}<br>
+                                <b>Precio: </b>${{ $item->price }}<br>
                                 <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
                                 {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
                             </p>
