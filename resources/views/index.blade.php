@@ -76,9 +76,9 @@
                             <i class="fa fa-shopping-cart"></i> Agregar
                         </button>
                     </form>
-                    <button class="btn btn-primary btn-sm btn-md">
-                        Comprar
-                    </button>
+                    <a href="{{ route('showProduct',$product->name) }}" class="btn btn-yellow btn-sm">
+                        Ver más
+                    </a>
                 </div>
             </div>
         </div>

@@ -20,5 +20,9 @@ class ProductController extends Controller
             return view('products', compact('products','categories'));
         }
     }
+    public function show_product($name = null){
+        $product = Product::where('name',$name)->get();
+        return view('show-product', compact('product'));
+    }
 
 }

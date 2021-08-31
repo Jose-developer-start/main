@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+::root{
+    --title-color-product: #00239c;
+}
 .card-img{
     height: 180px;
     width: 180px;
@@ -78,3 +81,31 @@
 .cart{
     height: 55%;
 }
+/*Show product style*/
+@media (min-width: 770px) {
+    .product-details{
+        border-left: 1px solid rgba(102, 102, 102, 0.397);
+    }
+}
+.product-item-img{
+    width: 70%;
+    object-fit: cover;
+}
+.product-item-title{
+    color: #00239c;
+    font-size: 26px;
+    font-weight: 600;
+}
+.product-item-detail{
+    font-size: 24px;
+}
+.product-item-old-price{
+    text-decoration: line-through;
+    color: #ee1717;
+    font-size: 18px;
+}
+.product-item-price{
+    color: #77c05b;
+    font-size: 22px;
+}
+/*End Show intem style*/
