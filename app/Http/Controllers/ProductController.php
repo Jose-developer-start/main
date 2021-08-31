@@ -19,5 +19,14 @@ class ProductController extends Controller
         $categories = Category::all();
         return view('products', compact('products','categories'));
     }
+    /*
+    //Prueba para consultar
+    public function product($category = null){
+        $cate = Category::where('name',$category)->get();
+        $products = Product::where('category_id',$cate[0]->id)->paginate(8);
+        //$categories = Category::all();
+        return $products;
+    }
+    */
 
 }

@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-6">
                     <b>{{$item->name}}</b>
-                    <br><small>Qty: {{$item->quantity}}</small>
+                    <br><small>cantidad: {{$item->quantity}}</small>
                 </div>
                 <div class="col-lg-3">
                     <p>${{ \Cart::get($item->id)->getPriceSum() }}</p>
