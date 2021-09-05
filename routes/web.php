@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes For System
 |--------------------------------------------------------------------------
 */
 
@@ -15,8 +15,8 @@ Route::post('/checkout', 'PaymentController@createPayment')->name('create-paymen
 Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
 
 //Routas de productos
-Route::get('/productos','ProductController@show_products')->name('main.productos');
-Route::post('/productos','ProductController@search_product')->name('search_product');
+Route::get('/productos/{category?}','ProductController@show_products')->name('main.productos');
+Route::get('/ver/{product?}','ProductController@show_product')->name('showProduct');
 //Carrito
 Route::get('/carrito', 'cartController@cart')->name('cart.index');
 Route::post('/add', 'cartController@add')->name('cart.store');

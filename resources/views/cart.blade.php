@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top: 80px">
+    <div class="container" style="margin-top: 60px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Tecnlogy BOX</a></li>
@@ -53,7 +53,7 @@
                             <p>
                                 <b><a href="/shop/{{ $item->name }}">{{ $item->name }}</a></b><br>
                                 <b>Descripción</b> {{ $item->attributes->details }} <br>
-                                <b>Price: </b>${{ $item->price }}<br>
+                                <b>Precio: </b>${{ $item->price }}<br>
                                 <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
                                 {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
                             </p>

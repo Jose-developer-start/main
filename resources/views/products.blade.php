@@ -1,19 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 60px">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Tecnlogy BOX</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+        </ol>
+    </nav>
     <h1 class="text-center p-4">Compra los mejores productos</h1>
     <div class="d-flex justify-content-center mb-4">
-        <form action="" method="POST" class="form-inline my-2 my-lg-0">
-            @csrf
-            <select name="product_id" id="product_id" class="form-control mx-sm-2 my-lg-0">
-                <option disabled selected>Buscar por categoria</option>
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-            </select>
-            <button type="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Buscar por categoria
+                </a> 
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @foreach ($categories as $category)
+                    <a class="dropdown-item" href="{{ route('main.productos',$category->name) }}">{{ $category->name }}</a>
+                    @endforeach
+                </div>
+              </li>
+        </ul>
     </div>
     <div class="row">
         @forelse ($products as $product)
@@ -38,13 +46,13 @@
                         <input type="hidden" value="{{ $product->sale_price }}" id="price" name="price">
                         <input type="hidden" value="{{ $product->image }}" id="image" name="image">
                         <input type="hidden" value="1" id="quantity" name="quantity">
-                        <button class="btn btn-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
+                        <button class="btn btn-outline-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
                             <i class="fa fa-shopping-cart"></i> Agregar
                         </button>
                     </form>
-                    <button class="btn btn-yellow btn-sm">
-                        Comprar
-                    </button>
+                    <a href="{{ route('showProduct',$product->name) }}" class="btn btn-yellow btn-sm">
+                        Ver más
+                    </a>
                 </div>
             </div>
         </div>

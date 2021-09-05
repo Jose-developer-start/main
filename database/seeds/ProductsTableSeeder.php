@@ -21,7 +21,7 @@ class ProductsTableSeeder extends Seeder
             'image' => 'sony.png',
             'brand_id' => 1,
             'supplier_id' => 1,
-            'category_id' => 5
+            'category_id' => 4
         ]);
         DB::table('products')->insert([
             'name' => 'Router OMEGA',

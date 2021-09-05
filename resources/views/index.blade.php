@@ -25,84 +25,26 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-  </header>
-  <div class="container">
+</header>
+<div class="container">
       
-  <section class="container-fluid">
+  <section>
     <h2 class="p-3 text-center">Comprar por categoria</h2>
     <div class="row">
+        @foreach ($categories as $category)
         <div class="col-6 col-sm-6 col-md-2 mb-3">
-            <a href="">
+            <a href="{{ route('main.productos',$category->name) }}">
                 <div class="card">
                     <div class="m-auto">
-                        <img src="./image/1.png" alt="">
+                        <img class="img-thumbnail" src="./images/1.jpg" alt="">
                     </div>
                     <div class="card-body">
-                        <h4 class="text-center">Pantallas</h4>
+                        <h6 class="text-center">{{ $category->name }}</h6>
                     </div>
                 </div>
             </a>
         </div>
-        <div class="col-6 col-sm-6 col-md-2 mb-3">
-            <a href="">
-                <div class="card">
-                    <div class="m-auto">
-                        <img src="./image/1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="text-center">Pantallas</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-sm-6 col-md-2 mb-3">
-            <a href="">
-                <div class="card">
-                    <div class="m-auto">
-                        <img src="./image/1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="text-center">Pantallas</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-sm-6 col-md-2 mb-3">
-            <a href="">
-                <div class="card">
-                    <div class="m-auto">
-                        <img src="./image/1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="text-center">Pantallas</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-sm-6 col-md-2 mb-3">
-            <a href="">
-                <div class="card">
-                    <div class="m-auto">
-                        <img src="./image/1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="text-center">Pantallas</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-6 col-sm-6 col-md-2 mb-3">
-            <a href="">
-                <div class="card">
-                    <div class="m-auto">
-                        <img src="./image/1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="text-center">Pantallas</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
+        @endforeach
     </div>
 </section>
 <section class="container-fluid">
@@ -130,13 +72,13 @@
                         <input type="hidden" value="{{ $product->sale_price }}" id="price" name="price">
                         <input type="hidden" value="{{ $product->image }}" id="image" name="image">
                         <input type="hidden" value="1" id="quantity" name="quantity">
-                        <button class="btn btn-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
+                        <button class="btn btn-outline-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
                             <i class="fa fa-shopping-cart"></i> Agregar
                         </button>
                     </form>
-                    <button class="btn btn-primary btn-sm btn-md">
-                        Comprar
-                    </button>
+                    <a href="{{ route('showProduct',$product->name) }}" class="btn btn-yellow btn-sm">
+                        Ver más
+                    </a>
                 </div>
             </div>
         </div>
@@ -171,6 +113,6 @@
         </div>
     </div>
 </section>
-  </div>
+</div>
 
 @endsection
