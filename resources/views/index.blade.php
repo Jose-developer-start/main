@@ -72,7 +72,7 @@
                         <input type="hidden" value="{{ $product->sale_price }}" id="price" name="price">
                         <input type="hidden" value="{{ $product->image }}" id="image" name="image">
                         <input type="hidden" value="1" id="quantity" name="quantity">
-                        <button class="btn btn-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
+                        <button class="btn btn-outline-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">
                             <i class="fa fa-shopping-cart"></i> Agregar
                         </button>
                     </form>
