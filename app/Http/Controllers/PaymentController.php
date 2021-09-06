@@ -2,9 +2,11 @@
 namespace App\Http\Controllers;
 
 use App\Sale;
+use App\Sale_detail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 /** Paypal Details classes **/
 use PayPal\Rest\ApiContext;
@@ -91,12 +93,12 @@ class PaymentController extends Controller
         }
         // If we don't have redirect url, we have unknown error.
         return redirect()->back()->withError('Ocurrió un error desconocido');
-        }
+    }
         /**
         ** This method confirms if payment with paypal was processed successful and then execute the payment, 
         ** we have 'paymentId, PayerID and token' in query string.
         **/
-        public function confirmPayment(Request $request){
+    public function confirmPayment(Request $request){
         // If query data not available... no payments was made.
         if (empty($request->query('paymentId')) || empty($request->query('PayerID')) || empty($request->query('token'))){
             return redirect('/checkout')->withError('El pago no se realizó correctamente.');
@@ -109,7 +111,7 @@ class PaymentController extends Controller
         // Then we execute the payment.
         $result = $payment->execute($execution, $this->api_context);
         // Get value store in array and verified data integrity
-        //UPDATE SALE
+        //UPDATE VENTA
         $newSale = Sale::create([
             'date' => Carbon::now()->format('Y-m-d'),
             'payment' => \Cart::getTotal(),
@@ -117,11 +119,25 @@ class PaymentController extends Controller
             'paypal_data' => $payment,
             'quanty_products' => \Cart::getTotalQuantity(),
             'status' => 1,
-            'user_id' => Auth::user()->id,
+            'user_id' => Auth::user()->id
         ]);
+        //Insertando uno a uno de los productos comprados
+        foreach(\Cart::getContent() as $product){
+            Sale_detail::create([
+                'unit_price' => $product->price,
+                'quanty' => $product->quantity,
+                'sale_id' => $newSale->id,
+                'product_id' => $product->id
+            ]);
+            //Update inventories
+            DB::table('inventories')->where('product_id',$product->id)->decrement('stock',$product->quantity);
+        }
         // $value = $request->session()->pull('key', 'default');
         // Check if payment is approved
         if ($result->getState() != 'approved'){
+            //Modify status of sale
+            $newSale->status = 0; 
+            $newSale->save();
             return redirect('/checkout')->withError('El pago no se realizó correctamente.');
         }else{
             \Cart::clear();

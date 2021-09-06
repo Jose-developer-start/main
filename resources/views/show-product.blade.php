@@ -19,7 +19,7 @@
 
             <h1 class="product-item-title">{{ $product->name }}</h1>
             <h2 class="product-item-detail">{{ $product->description }}</h2>
-            <p>Sock: {{ $product->stock->stock }}</p>
+            <p>Sock: {!! $product->stock->stock > 0 ? $product->stock->stock : '<span>No hay existencia</span>' !!}</p>
 
             <span class="product-item-old-price">${{ $product->sale_price -10 }}</span>
             <h5 class="product-item-price">${{ $product->sale_price }}</h5>
