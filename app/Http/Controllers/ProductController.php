@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+    //Vistas
+    public function index(){
+        return view('admin.product.index');
+    }
+    public function create(){
+        return view('admin.product.create');
+    }
     public function show_products($category = null){
         if(!empty($category)){
             $cate = Category::where('name',$category)->get();

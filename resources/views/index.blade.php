@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','Technology Box')
+
 @section('content')
 <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

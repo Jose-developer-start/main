@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title',{{ $product->name }})
+
 @section('content')
 <div class="container mb-4">
     <nav aria-label="breadcrumb" style="margin-top: 60px">

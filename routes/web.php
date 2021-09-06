@@ -28,3 +28,13 @@ Route::post('/clear', 'CartController@clear')->name('cart.clear');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Routas administrador
+Route::get('/mystore',function(){
+    return view('admin.home');
+})->name('mystore.home')->middleware('auth');
+
+//Routas productos
+Route::get('/mystore/productos','ProductController@index')->name('product.index')->middleware('auth');
+Route::get('/mystore/productos/nuevo','ProductController@create')->name('product.create')->middleware('auth');
