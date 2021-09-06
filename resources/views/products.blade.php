@@ -29,7 +29,7 @@
             <div class="card border-0 mb-3">
                 <span class="ml-2 p-2 card-ofert">Oferta</span>
                 <div class="m-auto">
-                    <img class="card-img" src="{{asset('images/mouse.png')}}" alt="">
+                    <img class="card-img" src="{{asset('images/'.$product->image)}}" alt="">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>

@@ -12,7 +12,7 @@
     <div class="row">    
         <div class="col-12 col-sm-12 col-md-6">
             <div class="d-flex justify-content-center">
-                <img class="product-item-img" src="{{asset('images/mouse.png')}}" alt="">
+                <img class="product-item-img" src="{{asset('images/'.$product->image)}}" alt="">
             </div>
         </div>
         <div class="col-12 col-sm-12 col-md-6 product-details">
