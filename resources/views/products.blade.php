@@ -83,7 +83,7 @@
         {{ $products->links() }}
     </div>
 </div>
-<section class="container-fluid bg-newsletter mb-3">
+<section class="container bg-newsletter mb-3">
     <h2 class="text-center p-3">Enterate de las novedades</h2>
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6">
