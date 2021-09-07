@@ -41,7 +41,7 @@
                     @if($product->discount > 0)
                     <span class="old-price">${{ $product->sale_price }}</span>
                     <span class="price"><b>
-                        {{ calPercentaje($product->discount,$product->sale_price) }}
+                        ${{ calPercentaje($product->discount,$product->sale_price) }}
                     </b></span>
                     @else
                     <span class="old-price">-</span>

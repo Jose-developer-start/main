@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/','HomeController@index'); //Vista principal
+Route::get('/','HomeController@index')->name('home'); //Vista principal
 
 
 

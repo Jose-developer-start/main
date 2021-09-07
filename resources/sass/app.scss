@@ -23,6 +23,11 @@
 .card-description{
     color: #666;
     font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .card-footer{
     background: none;
@@ -49,7 +54,11 @@
 /*HOME*/
 .bg-newsletter{
     background-color: #f0f0f0;
-    border-radius: 90px;
+}
+@media (min-width: 760px){
+    .bg-newsletter{
+        border-radius: 10px;
+    }
 }
 /**FOOTER*/
 .f-title-primary{

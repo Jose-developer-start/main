@@ -7,10 +7,10 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item {{ setActive('home') }}">
           <a class="nav-link" href="{{ url('/') }}">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{ setActive('main.productos') }}">
           <a class="nav-link" href="{{ route('main.productos') }}">Productos</a>
         </li>
         <li class="nav-item">

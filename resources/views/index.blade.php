@@ -67,7 +67,7 @@
                     @if($product->discount > 0)
                     <span class="old-price">${{ $product->sale_price }}</span>
                     <span class="price"><b>
-                        {{ calPercentaje($product->discount,$product->sale_price) }}
+                        ${{ calPercentaje($product->discount,$product->sale_price) }}
                     </b></span>
                     @else
                     <span class="old-price">-</span>
@@ -126,7 +126,7 @@
         <div class="col-12 col-sm-12 col-md-6">
             <div class="form-group row">
                 <input class="form-control col-md-8" type="text">
-                <button class="btn btn-outline-info">Enviar</button>
+                <button class="btn btn-outline-info btn-sm">Enviar</button>
             </div>
         </div>
     </div>
