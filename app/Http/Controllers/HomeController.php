@@ -25,7 +25,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        $products = Product::limit(4)->get(); //Modelo de productos
+        $products = Product::orderBy('id','desc')->limit(4)->get(); //Modelo de productos
         $categories = Category::all(); //Modelo de categorias
         return view('index', compact('products','categories'));
         

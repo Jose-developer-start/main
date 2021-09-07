@@ -29,15 +29,25 @@
         @forelse ($products as $product)
         <div class="col-6 col-md-3 col-lg-3">
             <div class="card border-0 mb-3">
-                <span class="ml-2 p-2 card-ofert">Oferta</span>
+                @if($product->discount > 0)
+                <span class="ml-2 p-2 card-ofert">En oferta</span>
+                @endif
                 <div class="m-auto">
-                    <img class="card-img" src="{{asset('images/'.$product->image)}}" alt="">
+                    <img class="card-img" src="{{ asset('storage/'.$product->image)}}" alt="">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-description">{{ $product->description }}</p>
-                    <span class="old-price">$25</span>
+                    @if($product->discount > 0)
+                    <span class="old-price">${{ $product->sale_price }}</span>
+                    <span class="price"><b>
+                        {{ calPercentaje($product->discount,$product->sale_price) }}
+                    </b></span>
+                    @else
+                    <span class="old-price">-</span>
                     <span class="price"><b>${{ $product->sale_price }}</b></span>
+
+                    @endif
                 </div>
                 <div class="card-footer border-0 d-flex justify-content-between">
                     <form action="{{ route('cart.store') }}" method="POST">
@@ -45,7 +55,11 @@
                         <input type="hidden" value="{{ $product->id }}" id="id" name="id">
                         <input type="hidden" value="{{ $product->name }}" id="name" name="name">
                         <input type="hidden" value="{{ $product->description }}" id="details" name="details">
+                        @if($product->discount > 0)
+                        <input type="hidden" value="{{ calPercentaje($product->discount,$product->sale_price) }}" id="price" name="price">
+                        @else
                         <input type="hidden" value="{{ $product->sale_price }}" id="price" name="price">
+                        @endif
                         <input type="hidden" value="{{ $product->image }}" id="image" name="image">
                         <input type="hidden" value="1" id="quantity" name="quantity">
                         <button class="btn btn-outline-secondary btn-sm btn-md" class="tooltip-test" title="add to cart">

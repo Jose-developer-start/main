@@ -19,11 +19,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
-          @csrf
+        <form action="{{ route('product.update',$product) }}" method="POST" enctype="multipart/form-data">
+          @csrf @method('PUT')
           @include('admin.product._form')
           <div class="tile-footer">
-            <button class="btn btn-primary" type="submit">Agregar</button>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
           </div>
         </form>
       </div>

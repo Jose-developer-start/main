@@ -38,3 +38,10 @@ Route::get('/mystore',function(){
 //Routas productos
 Route::get('/mystore/productos','ProductController@index')->name('product.index')->middleware('auth');
 Route::get('/mystore/productos/nuevo','ProductController@create')->name('product.create')->middleware('auth');
+
+Route::post('/mystore/productos/nuevo','ProductController@store')->name('product.store')->middleware('auth');
+Route::get('/mystore/productos/{product}','ProductController@edit')->name('product.edit')->middleware('auth');
+
+Route::put('/mystore/productos/{product}','ProductController@update')->name('product.update')->middleware('auth');
+
+Route::delete('/mystore/productos/{product}','ProductController@destroy')->name('product.destroy')->middleware('auth');
