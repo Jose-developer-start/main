@@ -28,3 +28,9 @@ php artisan serve
 ```php
   npm run watch
 ```
+
+3. Para enlazar las imagenes ejecutar
+
+```php
+  php artisan storage:link
+```
