@@ -33,7 +33,6 @@ class ProductController extends Controller
             'sale_price' => 'required',
             'discount' => 'required',
             'model' => 'required',
-            'image' => 'required',
             'brand_id' => 'required',
             'supplier_id' => 'required',
             'category_id' => 'required'
@@ -61,7 +60,6 @@ class ProductController extends Controller
             'sale_price' => 'required',
             'discount' => 'required',
             'model' => 'required',
-            'image' => 'required',
             'brand_id' => 'required',
             'supplier_id' => 'required',
             'category_id' => 'required'
