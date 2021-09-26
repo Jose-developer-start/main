@@ -5,11 +5,7 @@
 | Web Routes For System
 |--------------------------------------------------------------------------
 */
-<<<<<<< HEAD
 
-Route::get('/','HomeController@index')->name('home'); //Vista principal
-
-=======
                         /*Vista principal del proyecto*/
 
 Route::get('/','HomeController@index')->name('home');
@@ -17,19 +13,12 @@ Route::get('/','HomeController@index')->name('home');
 /*-------------------------------------------------------------------------------------*/
 
 /*+++++++++++++++++++++++++ Inicio Rutas de  paypal++++++++++++++++++++++++++++++++++++*/
->>>>>>> 7b9681826b525f9d9cb36630677b441ab78e86b6
 
 
 Route::get('/checkout', 'PaymentController@index')->middleware('auth');
 Route::post('/checkout', 'PaymentController@createPayment')->name('create-payment');
 Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
-<<<<<<< HEAD
 
-//Routas de productos
-Route::get('/productos/{category?}','ProductController@show_products')->name('main.productos');
-Route::get('/ver/{product?}','ProductController@show_product')->name('showProduct');
-//Carrito
-=======
 /*+++++++++++++++++++++++++ fin de rutas de paypal++++++++++++++++++++++++++++++++++++++*/
 
 /*---------------------------------------------------------------------------------------*/
@@ -43,25 +32,13 @@ Route::get('/ver/{product?}','ProductController@show_product')->name('showProduc
 /*--------------------------------------------------------------------------------------*/
 
 /*+++++++++++++++++++++++++ Inicio de rutas para el carrito++++++++++++++++++++++++++++++++++++*/
->>>>>>> 7b9681826b525f9d9cb36630677b441ab78e86b6
 Route::get('/carrito', 'cartController@cart')->name('cart.index');
 Route::post('/add', 'cartController@add')->name('cart.store');
 Route::post('/update', 'CartController@update')->name('cart.update');
 Route::post('/remove', 'CartController@remove')->name('cart.remove');
 Route::post('/clear', 'CartController@clear')->name('cart.clear');
-<<<<<<< HEAD
 
-//Routas del login
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-//Routas administrador
-=======
 /*+++++++++++++++++++++++++ fin de rutas de carrito++++++++++++++++++++++++++++++++++++*/
-
-/*---------------------------------------------------------------------------------------*/
 
 /*+++++++++++++++++++++++++ Rutas del login++++++++++++++++++++++++++++++++++++++++++++*/
 Auth::routes();
@@ -70,20 +47,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*+++++++++++++++++++++++++ fin de rutas de login++++++++++++++++++++++++++++++++++++++*/
 
 /*---------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------*/
 /*------------------------------- inicio de rutas administrador----------------------------------*/
 /*-----------------------------------------------------------------------------------------------*/
 
 
-
->>>>>>> 7b9681826b525f9d9cb36630677b441ab78e86b6
 Route::get('/mystore',function(){
     return view('admin.home');
 })->name('mystore.home')->middleware('auth');
 
-<<<<<<< HEAD
-//Routas productos
-=======
+
 /*+++++++++++++++++++++++++ Inicio Rutas de  proveedores administrador+++++++++++++++++++++++++*/
 Route::get('/mystore/proveedor','SupplierController@index')->name('suplier.index')->middleware('auth');
 Route::get('/mystore/proveedor/n','SupplierController@create')->name('suplier.create')->middleware('auth');
@@ -98,7 +70,6 @@ Route::delete('/mystore/proveedor/{supplier}','SupplierController@destroy')->nam
 /*-----------------------------------------------------------------------------------------*/
 
 /*+++++++++++++++++++++++ Inicio Routas de  productos administrador++++++++++++++++++++++++++++++*/
->>>>>>> 7b9681826b525f9d9cb36630677b441ab78e86b6
 Route::get('/mystore/productos','ProductController@index')->name('product.index')->middleware('auth');
 Route::get('/mystore/productos/nuevo','ProductController@create')->name('product.create')->middleware('auth');
 
@@ -107,9 +78,7 @@ Route::get('/mystore/productos/{product}','ProductController@edit')->name('produ
 
 Route::put('/mystore/productos/{product}','ProductController@update')->name('product.update')->middleware('auth');
 
-<<<<<<< HEAD
-Route::delete('/mystore/productos/{product}','ProductController@destroy')->name('product.destroy')->middleware('auth');
-=======
+
 Route::delete('/mystore/productos/{product}','ProductController@destroy')->name('product.destroy')->middleware('auth');
 /*---------------------fin de rutas de productos administrador----------------------------*/
 
@@ -118,4 +87,3 @@ Route::delete('/mystore/productos/{product}','ProductController@destroy')->name(
 /*---------------------Inicio de rutas de  Ventas administrador----------------------------*/
 
 Route::get('/mystore/venntas','SalesController@index')->name('sales.sales_index')->middleware('auth');
->>>>>>> 7b9681826b525f9d9cb36630677b441ab78e86b6
