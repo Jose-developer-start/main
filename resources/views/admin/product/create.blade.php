@@ -24,6 +24,7 @@
           @include('admin.product._form')
           <div class="tile-footer">
             <button class="btn btn-primary" type="submit">Agregar</button>
+            <a href="{{ route('product.index') }}" class="btn btn-outline-danger">Cancelar</a>
           </div>
         </form>
       </div>

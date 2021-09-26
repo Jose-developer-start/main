@@ -17,7 +17,7 @@
             <label class="sr-only" for="purchase_price">Precio</label>
             <div class="input-group">
               <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-              <input name="purchase_price" value="{{ old('purchase_price',$product->purchase_price) }}" class="form-control {{ $errors->has('purchase_price') ? 'is-invalid': '' }}" id="purchase_price" type="number" placeholder="19.99">
+              <input name="purchase_price" value="{{ old('purchase_price',$product->purchase_price) }}" class="form-control {{ $errors->has('purchase_price') ? 'is-invalid': '' }}" id="purchase_price" type="number" min="0" placeholder="19.99">
               <div class="input-group-append"><span class="input-group-text">.00</span></div>
               
             </div>
@@ -31,7 +31,7 @@
             <label class="sr-only" for="sale_price">Precio</label>
             <div class="input-group">
               <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-              <input name="sale_price"  value="{{ old('sale_price',$product->sale_price) }}" class="form-control {{ $errors->has('sale_price') ? 'is-invalid': '' }}" id="sale_price" type="number" placeholder="99.99">
+              <input name="sale_price"  value="{{ old('sale_price',$product->sale_price) }}" class="form-control {{ $errors->has('sale_price') ? 'is-invalid': '' }}" id="sale_price" type="number" min="0" placeholder="99.99">
               <div class="input-group-append"><span class="input-group-text">.00</span></div>
             </div>
           </div>
@@ -44,7 +44,7 @@
             <label class="sr-only" for="discount">Porcentaje</label>
             <div class="input-group">
               <div class="input-group-prepend"><span class="input-group-text">%</span></div>
-              <input name="discount"  value="{{ old('discount',$product->discount) }}" class="form-control {{ $errors->has('discount') ? 'is-invalid': '' }}" id="discount" type="number" placeholder="%10">
+              <input name="discount"  value="{{ old('discount',$product->discount) }}" class="form-control {{ $errors->has('discount') ? 'is-invalid': '' }}" id="discount" min="0" type="number" placeholder="%10">
               <div class="input-group-append"><span class="input-group-text">%</span></div>
             </div>
           </div>
