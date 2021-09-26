@@ -13,15 +13,15 @@
     <li class="treeview"><a class="app-menu__item {{ setActive('product.index') }}" href="{{ route('product.index') }}"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Productos</span></a>
       
     </li>
-
-
-  <li class="treeview"><a class="app-menu__item {{ setActive('suplier.index') }}" href="{{ route('suplier.index') }}"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Provedores</span></a>
-
-    </li>
-      <li class="treeview"><a class="app-menu__item {{ setActive('sales.sales_index') }}" href="{{ route('sales.sales_index') }}"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Ventas</span></a>
+        <li class="treeview"><a class="app-menu__item {{ setActive('suplier.index') }}" href="{{ route('suplier.index') }}"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Proveedores</span></a>
 
     </li>
 
+
+    </li>
+        <li class="treeview"><a class="app-menu__item {{ setActive('sales.sales_index') }}" href="{{ route('sales.sales_index') }}"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Ventas</span></a>
+
+    </li>
     <li class="treeview"><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Categoria</span></a>
       
     </li>

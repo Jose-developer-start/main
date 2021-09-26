@@ -33,7 +33,6 @@ class ProductController extends Controller
             'sale_price' => 'required',
             'discount' => 'required',
             'model' => 'required',
-            'image' => 'required',
             'brand_id' => 'required',
             'supplier_id' => 'required',
             'category_id' => 'required'
@@ -53,8 +52,6 @@ class ProductController extends Controller
         $categories = Category::all(); //Todas las categorias
         return view('admin.product.edit',compact('product','brands','suppliers','categories'));
     }
-
-
     public function update(Request $request, Product $product){
         $data = Request()->validate([
             'name' => 'required',
@@ -63,7 +60,6 @@ class ProductController extends Controller
             'sale_price' => 'required',
             'discount' => 'required',
             'model' => 'required',
-            'image' => 'required',
             'brand_id' => 'required',
             'supplier_id' => 'required',
             'category_id' => 'required'
@@ -77,8 +73,6 @@ class ProductController extends Controller
     }
     public function destroy(Product $product){
         Storage::delete('public/'.$product['image']);
-
-
         $product->delete();
         return redirect()->route('product.index')->with('success','Producto eliminado!');
     }

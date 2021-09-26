@@ -67,7 +67,11 @@
         <div class="form-group">
           <label for="exampleSelect1">Marca</label>
           <select class="form-control {{ $errors->has('brand_id') ? 'is-invalid': '' }}" id="brand" name="brand_id">
-            <option value="" selected>Selecionar</option>
+            @if(isset($product->brand->id))
+            <option value="{{ $product->brand->id }}" selected>{{ $product->brand->brand_name }}</option>
+            @else
+            <option value="">Seleccionar</option>
+            @endif
             @foreach ($brands as $brand)
             <option value="{{ $brand->id }}">{{ $brand->brand_name }}</option>
             @endforeach
@@ -77,7 +81,11 @@
         <div class="form-group">
           <label for="exampleSelect1">Proveedor</label>
           <select class="form-control {{ $errors->has('supplier_id') ? 'is-invalid': '' }}" id="brand" name="supplier_id">
-            <option value="" selected>Selecionar</option>
+            @if(isset($product->supplier->id))
+            <option value="{{ $product->supplier->id }}" selected>{{ $product->supplier->name }}</option>
+            @else
+            <option value="">Seleccionar</option>
+            @endif
             @foreach ($suppliers as $supplier)
             <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
             @endforeach
@@ -87,12 +95,22 @@
         <div class="form-group">
           <label for="exampleSelect1">Categoria</label>
           <select class="form-control {{ $errors->has('category_id') ? 'is-invalid': '' }}" id="brand" name="category_id">
-            <option value="" selected>Selecionar</option>
+            @if(isset($product->category->id))
+            <option value="{{ $product->category->id }}" selected>{{ $product->category->name }}</option>
+            @else
+            <option value="">Seleccionar</option>
+            @endif
             @foreach ($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
             
           </select>
+        </div>
+        <div class="old-img">
+          @if (isset($product->image))
+            <h4>Imagen actual</h4>
+            <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
+          @endif
         </div>
       </div>
     </div>

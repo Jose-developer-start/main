@@ -22,16 +22,20 @@
         </div>
         {{-- /////////////////////////////////////////////////////////--}}
 
-        {{-- /////////////////////////////////////////////////////////--}}
 
-
-        {{-- /////////////////////////////////////////////////////////--}}
 
 
         <div class="form-group">
           <label for="image">Imagen</label>
           <input class="form-control-file {{ $errors->has('image') ? 'is-invalid': '' }}" name="image" id="image" type="file" aria-describedby="fileHelp">
           {!! $errors->first('image','<small class="form-text text-muted" id="emailHelp">:message</small>') !!}
+        </div>
+
+          <div class="old-img">
+          @if (isset($supplier->image))
+            <h4>Imagen actual</h4>
+            <img class="img-fluid" src="{{ asset('storage/'.$supplier->image) }}" style="width:160px; height:110px;" >
+          @endif
         </div>
     </div>
 
