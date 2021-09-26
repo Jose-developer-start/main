@@ -6,12 +6,12 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Productos</h1>
+      <h1><i class="fa fa-th-list"></i> Proveedores</h1>
       <p>Table to display analytical data effectively</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item">Producto</li>
+      <li class="breadcrumb-item">Proveedor</li>
       <li class="breadcrumb-item active"><a href="#">Crear</a></li>
     </ul>
   </div>
@@ -19,12 +19,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('suplier.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
-          @include('admin.product._form')
+          @include('admin.suplier._form')
           <div class="tile-footer">
-            <button class="btn btn-primary" type="submit">Agregar</button>
-            <a href="{{ route('product.index') }}" class="btn btn-outline-danger">Cancelar</a>
+            <button class="btn btn-primary" type="submit">Agregar Proveedor</button>
           </div>
         </form>
       </div>

@@ -1,12 +1,12 @@
 @extends('admin.layout')
 
-@section('title','Productos/Agregar')
+@section('title','Proveedores/Editar')
 
 @section('content')
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Productos</h1>
+      <h1><i class="fa fa-th-list"></i> Proveedores</h1>
       <p>Table to display analytical data effectively</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
@@ -19,12 +19,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
-          @csrf
-          @include('admin.product._form')
+        <form action="{{ route('suplier.update',$supplier) }}" method="POST" enctype="multipart/form-data">
+          @csrf @method('PUT')
+          @include('admin.suplier._form')
           <div class="tile-footer">
-            <button class="btn btn-primary" type="submit">Agregar</button>
-            <a href="{{ route('product.index') }}" class="btn btn-outline-danger">Cancelar</a>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
           </div>
         </form>
       </div>
