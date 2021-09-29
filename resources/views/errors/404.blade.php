@@ -16,4 +16,3 @@
     </div>
 </div>
 </body>
-Hola Hilda, Felicidades por tu primer commit en el proyecto
