@@ -13,9 +13,13 @@
         <li class="nav-item {{ setActive('main.productos') }}">
           <a class="nav-link" href="{{ route('main.productos') }}">Productos</a>
         </li>
+        @auth
+        @if(auth()->user()->hasRoles([1,2]))
         <li class="nav-item">
             <a class="nav-link" href="{{ route('mystore.home') }}">Administrar</a>
-          </li>
+        </li>
+        @endif
+        @endauth
       </ul>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
@@ -58,12 +62,14 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}">
+                        Mi perfil
+                    </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
-
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>

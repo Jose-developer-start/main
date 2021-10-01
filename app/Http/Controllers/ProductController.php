@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('roles:1')->only(['index']);
+    }
     //Vistas
     public function index(){
         $products = Product::paginate(10);

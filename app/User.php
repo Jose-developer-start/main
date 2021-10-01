@@ -39,4 +39,13 @@ class User extends Authenticatable
     public function sales(){
         return $this->hasMany('App\Sale');
     }
+    public function hasRoles(array $roles){
+
+        foreach($roles as $role){
+            if($this->role_id == $role){
+                return true;
+            }
+        }
+        return false;
+    }
 }

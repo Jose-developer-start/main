@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Support\Facades\Auth;
+use App\User;
 
-class Admin
+use Closure;
+
+class CheckRole
 {
     /**
      * Handle an incoming request.
@@ -16,11 +17,12 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check()){
-            return redirect()->route('login');
-        }
-        if(Auth::user()->role_id == 1){
+        $roles = array_slice(func_get_args(), 2);
+
+
+        if(auth()->user()->hasRoles($roles)){
             return $next($request);
         }
+        return redirect()->route('home');
     }
 }
