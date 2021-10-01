@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','surname','direction', 'email', 'password','role_id',
+        'name','surname','direction', 'email', 'password','photo','role_id',
     ];
 
     /**
@@ -47,5 +47,13 @@ class User extends Authenticatable
             }
         }
         return false;
+    }
+    //Role
+    public function role(){
+        return $this->belongsTo(Rol::class);
+    }
+    public function getRouteKeyName()
+    {
+        return "email";
     }
 }

@@ -87,3 +87,15 @@ Route::delete('/mystore/productos/{product}','ProductController@destroy')->name(
 /*---------------------Inicio de rutas de  Ventas administrador----------------------------*/
 
 Route::get('/mystore/venntas','SalesController@index')->name('sales.sales_index')->middleware('auth');
+
+/**
+ * ROUTE OF USER
+ *
+ */
+Route::get('/mystore/usuarios','UsersController@index')->name('user.index');
+Route::get('/mystore/usuarios/registrar','UsersController@create')->name('user.create');
+
+Route::get('/mystore/usuarios/edit/{user}','UsersController@edit')->name('user.edit');
+Route::put('/mystore/usuarios/{user}','UsersController@update')->name('user.update');
+
+Route::delete('/mystore/usuarios/{user}','UsersController@destroy')->name('user.destroy');
