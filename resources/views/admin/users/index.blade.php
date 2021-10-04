@@ -45,11 +45,13 @@
                   <td>{{ $user->direction }}</td>
                   <td>{{ $user->role->name }}</td>
                   <td>
-                      <a href="{{ route('user.edit',$user) }}" class="btn btn-outline-info btn-sm mb-2">Editar</a>
+                      <div class="d-flex justify-content-center">
+                        <a href="{{ route('user.edit',$user) }}" class="btn btn-outline-info btn-sm mb-2 mx-3">Editar</a>
                       <form action="{{ route('user.destroy',$user) }}" method="POST">
                         @csrf @method('DELETE')
                         <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
                       </form>
+                      </div>
                   </td>
                 </tr> 
                 @endforeach
