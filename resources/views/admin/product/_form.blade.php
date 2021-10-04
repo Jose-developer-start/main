@@ -66,6 +66,19 @@
         </div>
     </div>
     <div class="col-lg-4 offset-lg-1">
+      @if (empty($product->id))     
+      <div class="form-group">
+        <label class="control-label">Cantidad de producto</label>
+        <div class="form-group">
+          <label class="sr-only" for="sale_price">Cantidad</label>
+          <div class="input-group">
+            <input name="quanty"  value="{{ old('quanty') }}" class="form-control {{ $errors->has('quanty') ? 'is-invalid': '' }}" id="sale_price" type="number" min="1" placeholder="99.99">
+          </div>
+        </div>
+        {!! $errors->first('quanty','<small class="form-text text-muted" id="emailHelp">:message</small>') !!}
+      </div>
+      @endif
+
         <div class="form-group">
           <label for="exampleSelect1">Marca</label>
           <select class="form-control {{ $errors->has('brand_id') ? 'is-invalid': '' }}" id="brand" name="brand_id">

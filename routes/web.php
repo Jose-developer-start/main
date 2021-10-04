@@ -99,3 +99,29 @@ Route::get('/mystore/usuarios/edit/{user}','UsersController@edit')->name('user.e
 Route::put('/mystore/usuarios/{user}','UsersController@update')->name('user.update');
 
 Route::delete('/mystore/usuarios/{user}','UsersController@destroy')->name('user.destroy');
+
+/**
+ * ROUTE OF ROLES
+ *
+ */
+Route::get('/mystore/roles','RolsController@index')->name('rol.index');
+Route::get('/mystore/roles/registrar','RolsController@create')->name('rol.create');
+
+Route::post('/mystore/roles','RolsController@store')->name('rol.store');
+
+Route::get('/mystore/roles/edit/{rol}','RolsController@edit')->name('rol.edit');
+Route::put('/mystore/roles/{rol}','RolsController@update')->name('rol.update');
+ 
+Route::delete('/mystore/roles/{rol}','RolsController@destroy')->name('rol.destroy');
+
+/**
+ * ROUTE OF INVENTARIO
+ *
+ */
+Route::get('/mystore/inventario','InventoriesController@index')->name('inventario.index');
+
+
+Route::get('/mystore/inventario/edit/{inventario}','InventoriesController@edit')->name('inventario.edit');
+Route::put('/mystore/inventario/{inventario}','InventoriesController@update')->name('inventario.update');
+ 
+Route::delete('/mystore/inventario/{inventario}','InventoriesController@destroy')->name('inventario.destroy');

@@ -27,4 +27,7 @@ class Product extends Model
     {
         return 'name';
     }
+    public function inventory(){
+        $this->belongsTo(Inventory::class);
+    }
 }

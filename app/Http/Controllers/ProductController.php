@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Inventory;
 use App\Product;
 use App\Supplier;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ class ProductController extends Controller
             'purchase_price' => 'required',
             'sale_price' => 'required',
             'discount' => 'required',
+            'quanty' => 'required',
             'model' => 'required',
             'brand_id' => 'required',
             'supplier_id' => 'required',
@@ -46,7 +48,13 @@ class ProductController extends Controller
             $data['image'] = $request->file('image')->store('productos','public');
         }
 
-        Product::create($data);
+        $newProduct = Product::create($data);
+        //Inserto al inventario el producto
+        Inventory::create([
+            "stock" => $data['quanty'],
+            "status" => 1,
+            "product_id" => $newProduct->id
+        ]);
         return redirect()->route('product.create')->with('success','Agregado exitosamente!!');
     }
 

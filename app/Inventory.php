@@ -8,7 +8,7 @@ class Inventory extends Model
 {
     protected $fillable = ['stock','status','product_id'];
 
-    public function product(){
-        return $this->hasOne('App\Product');
+    public function products(){
+        return $this->hasMany('App\Product','id','product_id');
     }
 }
