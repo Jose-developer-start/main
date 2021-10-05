@@ -123,5 +123,3 @@ Route::get('/mystore/inventario','InventoriesController@index')->name('inventari
 
 Route::get('/mystore/inventario/edit/{inventario}','InventoriesController@edit')->name('inventario.edit');
 Route::put('/mystore/inventario/{inventario}','InventoriesController@update')->name('inventario.update');
- 
-Route::delete('/mystore/inventario/{inventario}','InventoriesController@destroy')->name('inventario.destroy');

@@ -17,7 +17,7 @@ class CreateInventoriesTable extends Migration
             $table->id();
             $table->integer('stock');
             $table->tinyInteger('status');
-            $table->foreignId('product_id')->references('id')->on('products');
+            $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -35,9 +35,4 @@ class InventoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inventory $inventario)
-    {
-        $inventario->delete();
-        return redirect()->route('inventario.index')->with('success','Producto eliminado del inventario eliminado!');
-    }
 }

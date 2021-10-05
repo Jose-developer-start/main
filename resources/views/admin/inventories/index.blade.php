@@ -51,10 +51,7 @@
                   <td>
                       <div class="d-flex justify-content-end">
                         <a href="{{ route('inventario.edit',$inventario) }}" class="btn btn-outline-info btn-sm mb-2 mx-4">Editar</a>
-                      <form action="{{ route('inventario.destroy',$inventario) }}" method="POST">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
-                      </form>
+                      
                       </div>
                   </td>
                 </tr> 

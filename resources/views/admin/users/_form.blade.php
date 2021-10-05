@@ -18,7 +18,7 @@
 
         <div class="form-group">
           <label for="nombre">Email</label>
-          <input name="email" class="form-control {{ $errors->has('email') ? 'is-invalid': '' }}" id="nombre" type="text" value="{{ old('email',$user->name) }}" aria-describedby="emailHelp" placeholder="Ingresar nombre">
+          <input name="email" class="form-control {{ $errors->has('email') ? 'is-invalid': '' }}" id="nombre" type="text" value="{{ old('email',$user->email) }}" aria-describedby="emailHelp" placeholder="Ingresar nombre">
           {!! $errors->first('surname','<small class="form-text text-muted" id="emailHelp">:message</small>') !!}
         </div>
 
