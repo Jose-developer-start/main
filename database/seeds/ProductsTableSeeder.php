@@ -12,18 +12,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
-            'name' => 'Teclado Gamer',
-            'description' => 'Luces RGBA y teclado mecanico',
-            'purchase_price' => 10,
-            'sale_price' => 11,
-            'discount' =>0,
-            'model' => 'at102md',
-            'image' => 'teclado.jpg',
-            'brand_id' => 1,
-            'supplier_id' => 1,
-            'category_id' => 3
-        ]);
+        
         DB::table('products')->insert([
             'name' => 'Router OMEGA',
             'description' => 'Soporte bandas 3.5 Ghz y 5',

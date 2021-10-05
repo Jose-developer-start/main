@@ -45,7 +45,7 @@
                 @endif
                 <input type="hidden" value="{{ $product->image }}" id="image" name="image">
                 <input type="hidden" value="1" id="quantity" name="quantity">
-                <button class="btn btn-success btn-block my-3" class="tooltip-test" title="add to cart">
+                <button {{ $product->stock->stock > 0 ? '' : 'disabled' }} class="btn btn-success btn-block my-3" class="tooltip-test" title="add to cart">
                     <i class="fa fa-shopping-cart"></i> Agregar
                 </button>
             </form>

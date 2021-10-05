@@ -2,7 +2,7 @@
     <div class="col-lg-6">
         <div class="form-group">
           <label for="nombre">Cantidad de productos</label>
-          <input name="stock" class="form-control {{ $errors->has('quanty') ? 'is-invalid': '' }}" id="nombre" type="number" min="1" value="{{ old('name',$inventario->stock) }}" aria-describedby="emailHelp" placeholder="Ingresar nombre">
+          <input name="stock" class="form-control {{ $errors->has('quanty') ? 'is-invalid': '' }}" id="nombre" type="number" min="0" value="{{ old('name',$inventario->stock) }}" aria-describedby="emailHelp" placeholder="Ingresar nombre">
           {!! $errors->first('name','<small class="form-text text-muted" id="emailHelp">:message</small>') !!}
         </div>
         
