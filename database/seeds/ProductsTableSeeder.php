@@ -22,7 +22,7 @@ class ProductsTableSeeder extends Seeder
             'image' => 'teclado.jpg',
             'brand_id' => 1,
             'supplier_id' => 1,
-            'category_id' => 4
+            'category_id' => 3
         ]);
         DB::table('products')->insert([
             'name' => 'Router OMEGA',
