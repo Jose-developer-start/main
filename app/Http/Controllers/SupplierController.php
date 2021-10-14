@@ -7,7 +7,7 @@ use App\Supplier;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-
+ 
 class SupplierController extends Controller
 {
     /**

@@ -88,6 +88,10 @@ Route::delete('/mystore/productos/{product}','ProductController@destroy')->name(
 
 Route::get('/mystore/venntas','SalesController@index')->name('sales.sales_index')->middleware('auth');
 
+
+
+
+
 /**
  * ROUTE OF USER
  *
@@ -123,3 +127,27 @@ Route::get('/mystore/inventario','InventoriesController@index')->name('inventari
 
 Route::get('/mystore/inventario/edit/{inventario}','InventoriesController@edit')->name('inventario.edit');
 Route::put('/mystore/inventario/{inventario}','InventoriesController@update')->name('inventario.update');
+
+
+
+/**
+ * ROUTE OF category
+ *
+ */
+
+Route::get('/mystore/categorias','CategoryController@index')->name('category.index_category')->middleware('auth');
+Route::get('/mystore/categoria/n','CategoryController@create')->name('category.create_category')->middleware('auth');
+Route::post('/mystore/categoria/n','CategoryController@store')->name('category.store')->middleware('auth');
+Route::get('/mystore/categoria/{category}','CategoryController@edit')->name('category.edit')->middleware('auth');
+Route::put('/mystore/categoria/{category}','CategoryController@update')->name('category.update')->middleware('auth');
+Route::delete('/mystore/categoria/{category}','CategoryController@destroy')->name('category.destroy')->middleware('auth');
+/**
+ * ROUTE OF brands
+ *
+ */
+Route::get('/mystore/marcas','BrandsController@index')->name('brands.index_brands')->middleware('auth');
+Route::get('/mystore/marcas/n','BrandsController@create')->name('brands.create_brands')->middleware('auth');
+Route::post('/mystore/marcas/n','BrandsController@store')->name('brands.store')->middleware('auth');
+Route::get('/mystore/marcas/{brand}','BrandsController@edit')->name('brands.edit')->middleware('auth');
+Route::put('/mystore/marcas/{brand}','BrandsController@update')->name('brands.update')->middleware('auth');
+Route::delete('/mystore/marcas/{brand}','BrandsController@destroy')->name('brands.destroy')->middleware('auth');
