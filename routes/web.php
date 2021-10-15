@@ -151,3 +151,7 @@ Route::post('/mystore/marcas/n','BrandsController@store')->name('brands.store')-
 Route::get('/mystore/marcas/{brand}','BrandsController@edit')->name('brands.edit')->middleware('auth');
 Route::put('/mystore/marcas/{brand}','BrandsController@update')->name('brands.update')->middleware('auth');
 Route::delete('/mystore/marcas/{brand}','BrandsController@destroy')->name('brands.destroy')->middleware('auth');
+
+/*ROUTES ADD PDF GENERADOR*/
+
+Route::get('factura','generatorPDFController@factura')->name('factura');

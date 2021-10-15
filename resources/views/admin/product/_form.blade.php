@@ -18,7 +18,7 @@
             <div class="input-group">
               <div class="input-group-prepend"><span class="input-group-text">$</span></div>
 
-              <input name="purchase_price" value="{{ old('purchase_price',$product->purchase_price) }}" class="form-control {{ $errors->has('purchase_price') ? 'is-invalid': '' }}" id="purchase_price" type="number" min="0" placeholder="19.99">
+              <input name="purchase_price" step="any" value="{{ old('purchase_price',$product->purchase_price) }}" class="form-control {{ $errors->has('purchase_price') ? 'is-invalid': '' }}" id="purchase_price" type="number" min="0" placeholder="19.99">
               <div class="input-group-append"><span class="input-group-text">.00</span></div>
               
             </div>

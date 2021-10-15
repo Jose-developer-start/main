@@ -34,6 +34,11 @@
                     <img class="cart" src="{{ asset('./images/cart-empty.png') }}" alt="cart-empty">
                     <hr>
                     <a href="{{ url('/productos') }}" class="btn btn-outline-info">Agregar productos</a>
+
+                    @if(session('sale_id'))
+                    <a href="{{ route('factura') }}" target="_blank" class="btn btn-success">Factura de compra #{{ session('sale_id') }}</a>
+                    @endif
+
                 </div>
             </div>
         @endif

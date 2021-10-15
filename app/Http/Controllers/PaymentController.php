@@ -121,6 +121,8 @@ class PaymentController extends Controller
             'status' => 1,
             'user_id' => Auth::user()->id
         ]);
+        //GET ID DE COMPRA
+        session(['sale_id' => $newSale->id]);
         //Insertando uno a uno de los productos comprados
         foreach(\Cart::getContent() as $product){
             Sale_detail::create([

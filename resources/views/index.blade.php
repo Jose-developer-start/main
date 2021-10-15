@@ -29,7 +29,6 @@
       </div>
 </header>
 <div class="container">
-      
   <section>
     <h2 class="p-3 text-center">Comprar por categoria</h2>
     <div class="row">
