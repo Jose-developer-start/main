@@ -155,3 +155,11 @@ Route::delete('/mystore/marcas/{brand}','BrandsController@destroy')->name('brand
 /*ROUTES ADD PDF GENERADOR*/
 
 Route::get('factura','generatorPDFController@factura')->name('factura');
+
+//Rutas de perfil
+Route::get('mi-perfil','PerfilController@index')->name("perfil.index");
+Route::put('mi-perfil/{id}','PerfilController@update')->name("perfil.update");
+
+//Reporte de compras de cliente
+
+Route::get('facturas-compras','ComprasController@index')->name("reporte.index");

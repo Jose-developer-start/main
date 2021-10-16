@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Rol;
+use App\Http\Requests\ValidationPerfil;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class UsersController extends Controller
+class PerfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
-        return view('admin.users.index',compact('users'));
+        return view('users.perfil');
     }
 
     /**
@@ -26,9 +26,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $user = new User();
-        $rols = Rol::all();
-        return view('admin.users.create',compact('user','rols'));
+        //
     }
 
     /**
@@ -59,10 +57,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        $rols = Rol::all();
-        return view('admin.users.edit',compact('user','rols'));
+        //
     }
 
     /**
@@ -72,14 +69,16 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(User $user)
+    public function update(ValidationPerfil $request, $id)
     {
-        $edit_user = request()->all();
+        $updateUser = $request->except('_token','_method');
         if(request()->hasFile('photo')){
-            $edit_user['photo'] = request()->file('photo')->store('users','public'); 
+            $updateUser['photo'] = request()->file('photo')->store('users','public'); 
+            //Hash password
+            $updateUser['password'] = bcrypt(request()->password); 
         }
-        $user->update($edit_user);
-        return redirect()->route('user.index');
+        User::where('id',$id)->update($updateUser);
+        return redirect()->route('perfil.index');
     }
 
     /**
@@ -88,16 +87,8 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-        return redirect()->route('user.index');
-    }
-
-    public function perfil(){
-        return view('users.perfil');
-    }
-    public function updatePerfil($id){
-        return request()->all();
+        //
     }
 }
