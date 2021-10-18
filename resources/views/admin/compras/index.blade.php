@@ -6,8 +6,8 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Tus compras/s</h1>
-      <p>Historial de compra</p>
+      <h1><i class="fa fa-th-list"></i> Mis compras</h1>
+      <p>Historial de compras</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -25,19 +25,32 @@
           <div class="table-responsive">
             <table class="table table-hover table-bordered" id="sampleTable">
               <thead>
-                <tr>
+                <tr align="center">
                   <th>#</th>
-                  <th>Nombre</th>
-                  <th>Email</th>
                   <th>Fecha de compra</th>
-                  <th>Imprimir</th>
+                  <th>Pago</th>
+                  <th>Cant. Productos</th>
+                  <th>Estado</th>
+                  <th>Facturas</th>
                 </tr>
               </thead>
               <tbody>
                   
                   @foreach ($data as $item)
-                <tr>
-                    <td>{{ $item->name }}</td>
+                <tr align="center">
+                    <td>{{ $item->id }}</td>
+                    <td>{{ date("d-m-Y", strtotime($item->date))}}</td>
+                    <td>${{ $item->payment }}</td>
+                    <td>{{ $item->quanty_products }}</td>
+                    <td>
+                      @if ($item->status = 1)
+                          {{__('Comprado') }}
+                      @else
+                        {{__('Pendiente') }}
+                      @endif
+                    </td>
+                    <td><a href="{{ route('factura.compra',$item->id) }}" target="__blank" class="btn btn-info"><i class="far fa-file-pdf fa-2x"></i></a></td>
+
                 </tr>
                     @endforeach
                 </tbody>

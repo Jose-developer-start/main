@@ -26,11 +26,18 @@
                     <p><b>Nombre: </b>{{ Auth::user()->name }}</p>
                     <p><b>Apellido: </b>{{ Auth::user()->surname }}</p>
                     <p><b>Email: </b>{{ Auth::user()->email }}</p>
+                    <p><b>Celular: </b>{{ Auth::user()->phone }}</p>
                     <p><b>Dirección: </b>{{ Auth::user()->direction }}</p>
                     
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h2>Tus ultimas compras</h2>
+                    @forelse ($sales as $sale)
+                        <p><b>Fecha de compra: </b>{{ date("d-m-Y", strtotime($sale->date)) }}</p>
+                    @empty
+                        <h5>No hay compras realizadas</h5>
+                    @endforelse
+                    <a href="{{ route('reporte.index') }}" class="btn btn-outline-info">Ver compras <i class="far fa-eye"></i></a>
                 </div>
             </div>
             <div class="col-12 col-md-6">
@@ -72,6 +79,17 @@
                                     </div>
                                     {!! $errors->first('email','<span class="error">:message</span>') !!}
                                 </div>
+
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">Celular</span>
+                                        </div>
+                                        <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="número teléfonico" value="{{ old('email',Auth::user()->phone) }}" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    {!! $errors->first('phone','<span class="error">:message</span>') !!}
+                                </div>
+
                                 <div class="mb-3">
                                     <div class="input-group">
                                         <div class="input-group-prepend">

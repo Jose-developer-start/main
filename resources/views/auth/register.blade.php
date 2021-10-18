@@ -37,6 +37,17 @@
                         </div>
                         {!! $errors->first('email','<span class="error">:message</span>') !!}
                     </div>
+
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Celular</span>
+                            </div>
+                            <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="número teléfonico" value="{{ old('phone') }}" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        {!! $errors->first('phone','<span class="error">:message</span>') !!}
+                    </div>
+
                     <div class="mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">

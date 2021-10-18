@@ -163,3 +163,5 @@ Route::put('mi-perfil/{id}','PerfilController@update')->name("perfil.update");
 //Reporte de compras de cliente
 
 Route::get('facturas-compras','ComprasController@index')->name("reporte.index");
+//Ruta para generar facturas desde su historial de compra
+Route::get('factura-de-compra/{sale}','generatorPDFController@compra')->name("factura.compra");
