@@ -14,7 +14,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Email</span>
                         </div>
-                        <input type="text" name="email" class="form-control @error('password') is-invalid @enderror" placeholder="Correo" value="{{ old('email') }}" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Correo" value="{{ old('email') }}" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     {!! $errors->first('email','<span class="error">:message</span>') !!}
                 </div>
