@@ -10,7 +10,7 @@
       <p>Historial de compras</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      <li class="breadcrumb-item"><i class="fas fa-box-open"></i></li>
       <li class="breadcrumb-item">Compras</li>
       <li class="breadcrumb-item active"><a href="#">vista</a></li>
     </ul>
@@ -23,6 +23,9 @@
         </div>
         <div class="tile-body">
           <div class="table-responsive">
+            @if (!empty($data))
+                
+            
             <table class="table table-hover table-bordered" id="sampleTable">
               <thead>
                 <tr align="center">
@@ -55,7 +58,9 @@
                     @endforeach
                 </tbody>
             </table>
-            
+            @else
+              <h1>No hay compras registrado en el sistema</h1>
+            @endif
           </div>
         </div>
       </div>

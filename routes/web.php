@@ -50,11 +50,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*------------------------------- inicio de rutas administrador----------------------------------*/
 /*-----------------------------------------------------------------------------------------------*/
 
-
-Route::get('/mystore',function(){
-    return view('admin.home');
-})->name('mystore.home')->middleware('auth');
-
+//Administrador and usuario
+Route::get('/mystore','HomeController@dashboard')->name('mystore.home')->middleware('auth');
 
 /*+++++++++++++++++++++++++ Inicio Rutas de  proveedores administrador+++++++++++++++++++++++++*/
 Route::get('/mystore/proveedor','SupplierController@index')->name('suplier.index')->middleware('auth');
