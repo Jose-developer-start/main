@@ -9,7 +9,7 @@ class ComprasController extends Controller
     public function index(){
         $data = DB::table('sales')
             ->where('sales.user_id',auth()->user()->id)
-            ->get();
+            ->paginate(10);
         return view('admin.compras.index',compact('data'));
     }
 }

@@ -58,6 +58,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $data->links() }}
             @else
               <h1>No hay compras registrado en el sistema</h1>
             @endif
