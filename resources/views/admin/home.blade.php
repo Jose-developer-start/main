@@ -44,7 +44,7 @@
     </div>
     @else
     <div class="col-md-6 col-lg-3">
-      <div class="widget-small info coloured-icon"><i class="icon fa fa-thumbs-o-up fa-3x"></i>
+      <div class="widget-small info coloured-icon"><i class="icon fa fa-box-open fa-3x"></i>
         <div class="info">
           <h4>Productos</h4>
           <p><b>{{ $productCantidad }}</b></p>
