@@ -23,7 +23,7 @@
         </div>
         <div class="tile-body">
           <div class="table-responsive">
-            @if (!empty($data))
+            @if (count($data))
                 
             
             <table class="table table-hover table-bordered" id="sampleTable">
