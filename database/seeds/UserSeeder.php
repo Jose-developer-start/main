@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             'surname' => 'Deo',
             'direction' => 'San Salvador',
             'email' => 'josedeodanes99@gmail.com',
+            'phone' => 74473243,
             'password' => bcrypt('jose002'),
             'role_id' => 1
 
