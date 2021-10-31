@@ -5,6 +5,8 @@
 ### Windows
 1. Instalacion de sus componentes de composer
 
+#### Require php 7.3.* para su instalación
+
 ```php
 composer install
 ```
