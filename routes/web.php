@@ -34,9 +34,9 @@ Route::get('/ver/{product?}','ProductController@show_product')->name('showProduc
 /*+++++++++++++++++++++++++ Inicio de rutas para el carrito++++++++++++++++++++++++++++++++++++*/
 Route::get('/carrito', 'cartController@cart')->name('cart.index');
 Route::post('/add', 'cartController@add')->name('cart.store');
-Route::post('/update', 'CartController@update')->name('cart.update');
-Route::post('/remove', 'CartController@remove')->name('cart.remove');
-Route::post('/clear', 'CartController@clear')->name('cart.clear');
+Route::post('/update', 'cartController@update')->name('cart.update');
+Route::post('/remove', 'cartController@remove')->name('cart.remove');
+Route::post('/clear', 'cartController@clear')->name('cart.clear');
 
 /*+++++++++++++++++++++++++ fin de rutas de carrito++++++++++++++++++++++++++++++++++++*/
 
