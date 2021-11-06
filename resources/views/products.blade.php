@@ -27,7 +27,7 @@
     </div>
     <div class="row">
         @forelse ($products as $product)
-        <div class="col-6 col-md-3 col-lg-3">
+        <div class="col-6 col-md-6 col-lg-3">
             <div class="card border-0 mb-3">
                 @if($product->discount > 0)
                 <span class="ml-2 p-2 card-ofert">En oferta</span>

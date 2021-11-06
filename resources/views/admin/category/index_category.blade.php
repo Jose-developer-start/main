@@ -6,25 +6,25 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i>  Table category</h1>
-      <p>Table the category</p>
+      <h1><i class="app-menu__icon fas fa-project-diagram"></i> CATEGORY</h1>
+      <p> category</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+    <li class="breadcrumb-item"> <a href="/mystore" title=""> <i class="fa fa-home fa-lg"></i></a></li>
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active"><a href="#">Categories Table</a></li>
+      <li class="breadcrumb-item active"><a href=" {{route('product.index') }}">Products</a></li>
     </ul>
   </div>
   @include('admin.partials.notify')
   <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <div class="mb-3 d-flex justify-content-right">
+    <div class="col-md-12" style="color: black;">
+      <div class="tile" style="background-color:#D5D8DC ;" >
+        <div class="mb-3 d-flex justify-content-end">
           <a href="{{ route('category.create_category') }}" class="btn btn-success">Agregar +</a>
         </div>
         <div class="tile-body">
           <div class="table-responsive">
-            <table class="table table-hover table-bordered text-center  " id="sampleTable">
+            <table class="table table-hover table-bordered text-center  " id="table_categoria">
               <thead class="table-dark">
                 <tr>
                   <th>#</th>
@@ -43,17 +43,21 @@
 
                   </td >
                   <td class="table-light">
-                      <a href="{{ route('category.edit',$category) }}" class="btn btn-outline-info btn-sm mb-2">Modificar</a>
+                      <a href="{{ route('category.edit',$category) }}" class="btn btn-outline-info btn-sm mb-2"><span style="font-size: 14px; color:#9BBFF0;">
+    <i class="fas fa-pen"></i>
+  </span></a>
                       <form action="{{ route('category.destroy',$category) }}" method="POST">
                         @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm mb-2 ">Eliminar</button>
+                        <button type="submit" class="btn btn-outline-danger btn-sm mb-2 "><span style="font-size: 14px; color:red;">
+<i class="fas fa-trash"></i>
+</span></button>
                       </form>
                   </td>
                 </tr> 
                 @endforeach
               </tbody>
             </table>
-            {{ $categories->links()}}
+         {{--   {{ $categories->links()}} --}}
           </div>
         </div>
       </div>

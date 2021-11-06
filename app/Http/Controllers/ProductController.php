@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Brand;
@@ -19,7 +18,7 @@ class ProductController extends Controller
     }
     //Vistas
     public function index(){
-        $products = Product::paginate(10);
+        $products = Product::all();
         return view('admin.product.index',compact('products'));
     }
     public function create(){

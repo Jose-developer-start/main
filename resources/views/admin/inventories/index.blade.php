@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title','Productos')
+@section('title','Inventario')
 
 @section('content')
 <main class="app-content">
@@ -21,7 +21,7 @@
       <div class="tile">
         <div class="tile-body">
           <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="sampleTable">
+            <table class="table table-hover table-bordered" id="table_inventario">
               <thead>
                 <tr>
                   <th>#</th>
@@ -58,7 +58,6 @@
                 @endforeach
               </tbody>
             </table>
-            {{ $inventories->links() }}
           </div>
         </div>
       </div>

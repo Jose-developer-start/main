@@ -14,9 +14,15 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+
     public function index()
     {
-        $categories=Category::paginate(10);
+        $categories=Category::all();
         return view('admin/category/index_category',compact('categories'));
     }
 

@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title','Productos/Agregar')
+@section('title','Inventario/Agregar')
 
 @section('content')
 <main class="app-content">
