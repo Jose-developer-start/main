@@ -6,7 +6,7 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="app-menu__icon fab fa-product-hunt"></i> PRODUCTS </h1>
+      <h1><i class="app-menu__icon fab fa-product-hunt"></i> Productos </h1>
       <p>Table products</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">

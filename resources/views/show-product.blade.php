@@ -21,7 +21,7 @@
 
             <h1 class="product-item-title">{{ $product->name }}</h1>
             <h2 class="product-item-detail">{{ $product->description }}</h2>
-            <p>Sock: {!! $product->stock->stock > 0 ? $product->stock->stock : '<span>No hay existencia</span>' !!}</p>
+            <p>Stock: {!! $product->stock->stock > 0 ? $product->stock->stock : '<span>No hay existencia</span>' !!}</p>
 
             @if($product->discount > 0)
             <span class="old-price">${{ $product->sale_price }}</span>

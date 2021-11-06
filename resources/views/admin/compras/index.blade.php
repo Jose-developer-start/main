@@ -23,7 +23,7 @@
         </div>
         <div class="tile-body">
           <div class="table-responsive">
-            @if (count($data))
+            @if ($data->isNotEmpty())
                 
             
             <table class="table table-hover table-bordered" id="sampleTable">
@@ -60,7 +60,7 @@
             </table>
             {{ $data->links() }}
             @else
-              <h1>No hay compras registrado en el sistema</h1>
+              <h3>No hay compras registrado en el sistema</h3>
             @endif
           </div>
         </div>

@@ -37,7 +37,7 @@
             <a href="{{ route('main.productos',$category->name) }}">
                 <div class="card">
                     <div class="m-auto">
-                        <img class="img-thumbnail" src="./images/1.jpg" alt="">
+                        <img class="img-thumbnail" src="{{ asset('storage/'.$category->image) }}" alt="">
                     </div>
                     <div class="card-body">
                         <h6 class="text-center">{{ $category->name }}</h6>
@@ -109,10 +109,10 @@
             <img class="img-thumbnail" src="{{asset('images/lg.png')}}" alt="">
         </div>
         <div class="col-12 col-sm-12 col-md-4 mb-3">
-            <img class="img-thumbnail" src="{{asset('images/lg.png')}}" alt="">
+            <img class="img-thumbnail" src="{{asset('images/nexxt-logo.png')}}" alt="">
         </div>
         <div class="col-12 col-sm-12 col-md-4 mb-3">
-            <img class="img-thumbnail" src="{{asset('images/lg.png')}}" alt="">
+            <img class="img-thumbnail" src="{{asset('images/kingston-logo.png')}}" alt="">
         </div>
     </div>
 </section>
