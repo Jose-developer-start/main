@@ -14,7 +14,7 @@ class RolsController extends Controller
      */
     public function index()
     {
-        $rols = Rol::paginate(10);
+        $rols = Rol::all();
         return view('admin.rols.index',compact('rols'));
     }
 

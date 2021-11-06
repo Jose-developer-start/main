@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title','Productos')
+@section('title','Ventas')
 
 @section('content')
 <main class="app-content">
@@ -19,9 +19,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <div class="mb-3 d-flex justify-content-end">
-          <a href="{{ route('product.create') }}" class="btn btn-success">Agregar</a>
-        </div>
+
         <div class="tile-body">
           <div class="table-responsive">
             <table class="table table-hover table-bordered" id="sampleTable">
@@ -31,8 +29,7 @@
                   <th>Fecha</th>
                   <th>Payment</th>
                   <th>Descuento</th>
-                  <th>paypal_data</th>
-                  <th>Cantidad_prductos</th>
+                  <th>Cant_prductos</th>
                   <th>status</th>
                   <th>Usuario </th>
                 </tr>
@@ -45,9 +42,17 @@
                   <td>{{ $sale->date }}</td>
                   <td>{{ $sale->payment }}</td>
                   <td>{{ $sale->discount}}</td>
-                  <td>{{ $sale->paypal_data }}</td>
                   <td>{{ $sale->quanty_products}}</td>
-                  <td>{{ $sale->status}}</td>
+
+                  <td>
+                      <?php  if($sale->status ==1){
+                         echo "Realizada";
+                      }
+                     else{
+                           echo "Pendiente";
+                              }
+                          ?>
+                    </td>
                   <td>{{ $sale->name}}</td>
                   <td>
                       <a href="{{ route('product.edit',$sale) }}" class="btn btn-outline-info btn-sm mb-2">Editar</a>

@@ -85,9 +85,11 @@ Route::delete('/mystore/productos/{product}','ProductController@destroy')->name(
 
 Route::get('/mystore/venntas','SalesController@index')->name('sales.sales_index')->middleware('auth');
 
+/*---------------------Inicio de rutas de  Ventas Reportes administrador----------------------------*/
 
-
-
+Route::get('/mystore/reporte','DetalleVentaController@index')->name('reporte.reporte_venta')->middleware('auth');
+Route::get('/mystore/fecha','DetalleVentaController@create')->name('reportes.reporte_fecha')->middleware('auth');
+Route::post('/mystore/fecha','DetalleVentaController@store')->name('reportes.store')->middleware('auth');
 
 /**
  * ROUTE OF USER

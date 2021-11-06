@@ -6,26 +6,26 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Data Table</h1>
-      <p>Table to display analytical data effectively</p>
+      <h1><i class="app-menu__icon fas fa-people-carry"></i> Supplier</h1>
+      <p>supplier</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active"><a href="#">Data Table</a></li>
+  <li class="breadcrumb-item"> <a href="/mystore" title=""> <i class="fa fa-home fa-lg"></i></a></li>
+
+       <li class="breadcrumb-item active"><a href=" {{route('product.index') }}">Products</a></li>
     </ul>
   </div>
   @include('admin.partials.notify')
   <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <div class="mb-3 d-flex justify-content-end">
-          <a href="{{ route('suplier.create') }}" class="btn btn-success">Agregar</a>
+    <div class="col-md-12" style="color: black;">
+      <div class="tile"  style="background-color:#D5D8DC" >
+        <div class="mb-3 d-flex justify-content-right">
+          <a href="{{ route('suplier.create') }}" class="btn btn-success">Agregar +</a>
         </div>
         <div class="tile-body">
           <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="sampleTable">
-              <thead>
+            <table class="table table-hover table-bordered text-center" id="table_proveedor">
+              <thead class="table-dark">
                 <tr>
                   <th>#</th>
                   <th>Nombre</th>
@@ -47,17 +47,21 @@
 
                   </td>
                   <td>
-                      <a href="{{ route('suplier.edit',$supplier) }}" class="btn btn-outline-info btn-sm mb-2">Editar</a>
+                      <a href="{{ route('suplier.edit',$supplier) }}" class="btn btn-outline-info btn-sm mb-2"><span style="font-size: 14px; color:#9BBFF0;">
+    <i class="fas fa-pen"></i>
+  </span></a>
                       <form action="{{ route('suplier.destroy',$supplier) }}" method="POST">
                         @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
+                        <button type="submit" class="btn btn-outline-danger btn-sm"><span style="font-size: 14px; color:red;">
+<i class="fas fa-trash"></i>
+</span></button>
                       </form>
                   </td>
                 </tr> 
                 @endforeach
               </tbody>
             </table>
-            {{ $suppliers->links()}}
+           {{-- {{ $suppliers->links()}} --}}
           </div>
         </div>
       </div>

@@ -23,18 +23,23 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--ICONS FONTAWESOME--->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
     @include('admin.partials.navbar')
     <!----Aside---->
     @include('admin.partials.aside')
+      @include('admin.partials.datatable')
     <div class="app">
         @yield('content')
     </div>
     
     <!-- Essential javascripts for application to work-->
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>

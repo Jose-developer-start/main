@@ -6,7 +6,7 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Mis compras</h1>
+      <h1><i class="app-menu__icon fas fa-box-open"></i> Mis compras</h1>
       <p>Historial de compras</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
@@ -27,7 +27,7 @@
                 
             
             <table class="table table-hover table-bordered" id="sampleTable">
-              <thead>
+              <thead class="table-dark">
                 <tr align="center">
                   <th>#</th>
                   <th>Fecha de compra</th>

@@ -28,6 +28,10 @@
     @if(auth()->user()->hasRoles([1]))
     <li class="treeview"><a class="app-menu__item {{ setActive('product.index') }}" href="{{ route('product.index') }}"><i class="app-menu__icon fab fa-product-hunt"></i><span class="app-menu__label">Productos</span></a>
     </li>
+<li class="treeview"><a class="app-menu__item" href="{{ route('reporte.reporte_venta') }}"><i class=" app-menu__icon far fa-file"></i><span class="app-menu__label">Reportes</span></a>
+
+</li>
+
     <li class="treeview"><a class="app-menu__item {{ setActive('suplier.index') }}" href="{{ route('suplier.index') }}"><i class="app-menu__icon fas fa-people-carry"></i><span class="app-menu__label">Proveedores</span></a>
       
     </li>
