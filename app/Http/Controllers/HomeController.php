@@ -51,14 +51,37 @@ class HomeController extends Controller
         /**
          * AMINISTRADOR
          */
-        $usuariosCantidad = null;
+        $data = null;
+        $data2 = null;
         $stock = null;
+        $usuariosCantidad = null;
         if(Auth::user()->id == 1){
             $comprasCantidad = Sale::count();
             $usuariosCantidad = User::count();
             $stock = DB::select('SELECT SUM(stock) as stock FROM `inventories`');
             $stock = $stock[0]->stock;
+            //Cantida de categorias
+            $categories = Category::join('products','categories.id','=','products.category_id')
+                ->groupBy('categories.name')
+                ->select('categories.name as categories',DB::raw('count(categories.name) as categories_count'))
+                ->get();
+                $punto = [];
+                foreach($categories as $category){
+                    $punto[] = ['name' => $category['categories'],'y' => $category['categories_count']];
+                }
+                $data = json_encode($punto);
+            
+            //Cantidad de productos
+            $products = Product::join('inventories','products.id','=','inventories.product_id')
+                ->select('products.name as products','inventories.stock as stock')
+                ->get();
+                $punto2 = [];
+                foreach($products as $product){
+                    $punto2[] = ['name' => $product['products'],'y' => $product['stock']];
+                }
+                $data2 = json_encode($punto2);
         }
-        return view('admin.home', compact('comprasCantidad','productCantidad','estadoCompras','usuariosCantidad','stock'));
+            
+        return view('admin.home', compact('comprasCantidad','productCantidad','estadoCompras','usuariosCantidad','stock','data','data2'));
     }
 }

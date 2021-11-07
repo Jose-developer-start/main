@@ -64,19 +64,19 @@
 
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="tile">
         <h3 class="tile-title">Productos categorias</h3>
-        <div class="embed-responsive embed-responsive-16by9">
-          <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
+        <div id="container">
+
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="tile">
-        <h3 class="tile-title">Estado de compras</h3>
-        <div class="embed-responsive embed-responsive-16by9">
-          <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
+        <h3 class="tile-title">Productos en stock</h3>
+          <div id="container2">
+          </div>
         </div>
       </div>
     </div>

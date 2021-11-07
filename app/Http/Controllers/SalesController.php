@@ -54,7 +54,6 @@ class SalesController extends Controller
     {
         $result = $sale->join("users", "sales.user_id", "=", "users.id")->where('sales.id','=',$sale->id)->select("*")
         ->get();
-        
         return view('admin.sales.show',compact('result'));
     }
 
