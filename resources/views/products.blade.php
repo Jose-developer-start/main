@@ -106,4 +106,10 @@
 </section>
   </div>
 
+  @if (session('success'))
+    <script>
+        alertify.success('Producto agregado al carrito');
+        //swal("Producto", "Agregado al carrito", "success");
+    </script>
+  @endif
 @endsection
