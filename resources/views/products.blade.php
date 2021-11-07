@@ -26,7 +26,11 @@
         </ul>
     </div>
     <div class="row">
+
         @forelse ($products as $product)
+        
+        @if($product->stock->status != 0)
+        
         <div class="col-6 col-md-6 col-lg-3">
             <div class="card border-0 mb-3">
                 @if($product->discount > 0)
@@ -72,7 +76,10 @@
                 </div>
             </div>
         </div>
+
+        @endif
         @empty
+        
         <div class="mx-auto mb-md-4 text-center">
             <h4>No hay productos en esta categoria</h4><br>
             <a href="/productos" class="btn btn-dark">Ver todos</a>

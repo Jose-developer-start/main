@@ -20,7 +20,7 @@ class ProductsTableSeeder extends Seeder
             'sale_price' => 300,
             'discount' =>0,
             'model' => 'at102md',
-            'image' => 'router.png',
+            'image' => 'productos/NaG7D5YbjJf0ip0BLW4qJUtRLvSXHCW1sJskA0M9.jpg',
             'brand_id' => 1,
             'supplier_id' => 1,
             'category_id' => 2
@@ -32,7 +32,7 @@ class ProductsTableSeeder extends Seeder
             'sale_price' => 12,
             'discount' =>0,
             'model' => 'at102md',
-            'image' => '1USB.png',
+            'image' => 'productos/gkmIHw3YMmu5LOlm6aZpdU8FXexEhY94yfJc2B0H.jpg',
             'brand_id' => 1,
             'supplier_id' => 1,
             'category_id' => 3
@@ -44,7 +44,7 @@ class ProductsTableSeeder extends Seeder
             'sale_price' => 5,
             'discount' =>0,
             'model' => 'at102md',
-            'image' => 'mouse.png',
+            'image' => 'productos/IuL1SbJAtWdWep3btfaPtkLJhA7mNw2UtFGJQLlp.jpg',
             'brand_id' => 1,
             'supplier_id' => 1,
             'category_id' => 3

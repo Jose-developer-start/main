@@ -51,7 +51,11 @@
 <section class="container-fluid">
     <h2 class="text-center p-3">Nuevos productos</h2>
     <div class="row">
+        
         @foreach ($products as $product)
+        
+        @if ($product->stock->status != 0)
+        
         <div class="col-6 col-md-3 col-lg-3">
             <div class="card border-0 mb-3">
                 @if($product->discount > 0)
@@ -99,6 +103,9 @@
                 </div>
             </div>
         </div>
+
+        @endif
+
         @endforeach
     </div>
 </section>
