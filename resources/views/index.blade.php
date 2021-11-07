@@ -62,7 +62,7 @@
                 <span class="ml-2 p-2 card-ofert">En oferta</span>
                 @endif
                 <div class="m-auto">
-                    <img class="card-img" src="{{asset('storage/'.$product->image)}}" alt="">
+                    <img class="card-img" style="width: 100%" src="{{asset('storage/'.$product->image)}}" alt="">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
@@ -138,5 +138,10 @@
     </div>
 </section>
 </div>
-
+@if (session('welcome'))
+    <script>
+        alertify.success('Bienvenido a la tienda');
+        //swal("Producto", "Agregado al carrito", "success");
+    </script>
+  @endif
 @endsection
