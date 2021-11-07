@@ -60,7 +60,7 @@
                     <td>{{ $sale->date }}</td>
                     <td>{{ $sale->discount }}</td>
                     <td>{{ $sale->name }}</td>
-                      <td>{{ $sale->surname }}</td>
+                      <td>{{ $sale->name_user." ".$sale->surname }}</td>
                 </tr>
                 @endforeach
             </tbody>

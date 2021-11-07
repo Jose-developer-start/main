@@ -46,16 +46,18 @@
                   <td>  <img class="card-img" style="width:130px; height:80px; " src="{{ asset('storage/'.$supplier->image)}}" alt="">
 
                   </td>
-                  <td>
-                      <a href="{{ route('suplier.edit',$supplier) }}" class="btn btn-outline-info btn-sm mb-2"><span style="font-size: 14px; color:#9BBFF0;">
-    <i class="fas fa-pen"></i>
-  </span></a>
-                      <form action="{{ route('suplier.destroy',$supplier) }}" method="POST">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm"><span style="font-size: 14px; color:red;">
-<i class="fas fa-trash"></i>
-</span></button>
-                      </form>
+                  <td >
+                      <div class="row justify-content-center">
+                        <a href="{{ route('suplier.edit',$supplier) }}" class="btn btn-outline-info btn-sm mb-2 mx-2"><span style="font-size: 14px; color:#9BBFF0;">
+                          <i class="fas fa-pen"></i>
+                        </span></a>
+                                            <form action="{{ route('suplier.destroy',$supplier) }}" method="POST">
+                                              @csrf @method('DELETE')
+                                              <button type="submit" class="btn btn-outline-danger btn-sm"><span style="font-size: 14px; color:red;">
+                      <i class="fas fa-trash"></i>
+                      </span></button>
+                                            </form>
+                      </div>
                   </td>
                 </tr> 
                 @endforeach

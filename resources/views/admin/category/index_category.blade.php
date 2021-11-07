@@ -42,22 +42,23 @@
                   <td class="table-light">  <img class="card-img" style="width:130px; height:80px; " src="{{ asset('storage/'.$category->image)}}" alt="">
 
                   </td >
-                  <td class="table-light">
-                      <a href="{{ route('category.edit',$category) }}" class="btn btn-outline-info btn-sm mb-2"><span style="font-size: 14px; color:#9BBFF0;">
-    <i class="fas fa-pen"></i>
-  </span></a>
-                      <form action="{{ route('category.destroy',$category) }}" method="POST">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm mb-2 "><span style="font-size: 14px; color:red;">
-<i class="fas fa-trash"></i>
-</span></button>
-                      </form>
+                  <td class="table-light" >
+                      <div class="row justify-content-center">
+                        <a href="{{ route('category.edit',$category) }}" class="btn btn-outline-info btn-sm  mx-2"><span style="font-size: 14px; color:#9BBFF0;">
+                          <i class="fas fa-pen"></i>
+                        </span></a>
+                                            <form action="{{ route('category.destroy',$category) }}" method="POST">
+                                              @csrf @method('DELETE')
+                                              <button type="submit" class="btn btn-outline-danger btn-sm  "><span style="font-size: 14px; color:red;">
+                      <i class="fas fa-trash"></i>
+                      </span></button>
+                                            </form>
+                      </div>
                   </td>
                 </tr> 
                 @endforeach
               </tbody>
             </table>
-         {{--   {{ $categories->links()}} --}}
           </div>
         </div>
       </div>

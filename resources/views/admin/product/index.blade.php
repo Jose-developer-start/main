@@ -47,21 +47,23 @@
                   <td>%{{ $product->discount }}</td>
                   <td>{{ $product->model }}</td>
                   <td>
-                      <a href="{{ route('product.edit',$product) }}" class="btn btn-outline-info btn-sm mb-2"> <span style="font-size: 17px; color:#9BBFF0;">
-    <i class="fas fa-pen"></i>
-  </span></a>
+                      <div class="row">
+                        <a href="{{ route('product.edit',$product) }}" class="btn btn-outline-info btn-sm mb-2 mx-2"> <span style="font-size: 17px; color:#9BBFF0;">
+                          <i class="fas fa-pen"></i>
+                        </span></a>
                       <form action="{{ route('product.destroy',$product) }}" method="POST">
                         @csrf @method('DELETE')
                         <button type="submit" class="btn btn-outline-danger btn-sm"><span style="font-size: 17px; color:red;">
-<i class="fas fa-trash"></i>
-</span></button>
+                          <i class="fas fa-trash"></i>
+                          </span></button>
                       </form>
+                      </div>
                   </td>
                 </tr> 
                 @endforeach
               </tbody>
             </table>
-           {{--   {{ $products->links() }}--}}
+           
           </div>
         </div>
       </div>

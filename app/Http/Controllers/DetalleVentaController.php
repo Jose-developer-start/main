@@ -21,8 +21,7 @@ class DetalleVentaController extends Controller
                         ->join('sales','sale_details.sale_id','=','sales.id')
                         ->join('products','sale_details.product_id','=','products.id')
                         ->join("users", "sales.user_id", "=", "users.id")
-                        ->select('sale_details.*', 'sales.discount','sales.date','products.name','users.surname')
-                        ->where('users.role_id',auth()->user()->id)
+                        ->select('sale_details.*', 'sales.discount','sales.date','products.name','users.name as name_user','users.surname')
                         ->get();
                         return view('admin.reportes.reporte_venta',compact('dataventa'));
 
@@ -63,7 +62,7 @@ class DetalleVentaController extends Controller
                 ->join('sales','sale_details.sale_id','=','sales.id')
                 ->join('products','sale_details.product_id','=','products.id')
                 ->join("users", "sales.user_id", "=", "users.id")
-                ->select('sale_details.*', 'sales.discount','sales.date','products.name','users.surname')
+                ->select('sale_details.*', 'sales.discount','sales.date','products.name','users.name as name_user','users.surname')
 
                  ->whereBetween('sales.date', [request()->from,request()->to])
                  ->get();

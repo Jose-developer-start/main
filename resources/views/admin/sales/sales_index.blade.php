@@ -33,6 +33,7 @@
                   <th>Cant_prductos</th>
                   <th>status</th>
                   <th>Usuario </th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,26 +42,23 @@
                 <tr>
                   <td>{{ $sale->id }}</td>
                   <td>{{ $sale->date }}</td>
-                  <td>{{ $sale->payment }}</td>
-                  <td>{{ $sale->discount}}</td>
+                  <td align="right">${{ $sale->payment }}</td>
+                  <td align="right">{{ $sale->discount}}</td>
                   <td>{{ $sale->quanty_products}}</td>
 
                   <td>
-                      <?php  if($sale->status ==1){
-                         echo "Realizada";
-                      }
-                     else{
-                           echo "Pendiente";
-                              }
-                          ?>
+                      @if($sale->status ==1)
+                          {{ __("Realizado")}}
+                     @else
+                          {{ __("Pendiente")}}
+                              
+                      @endif
                     </td>
-                  <td>{{ $sale->name}}</td>
+                  <td>{{ $sale->name ." ". $sale->surname}}</td>
                   <td>
-                      <a href="{{ route('product.edit',$sale) }}" class="btn btn-outline-info btn-sm mb-2">Editar</a>
-                      <form action="{{ route('product.destroy',$sale) }}" method="POST">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
-                      </form>
+                      <div class="row justify-content-center">
+                        <a href="{{ route('sales.show',$sale) }}" class="btn btn-outline-info btn-sm mb-2">Ver</a>
+                      </div>
                   </td>
                 </tr> 
                 @endforeach

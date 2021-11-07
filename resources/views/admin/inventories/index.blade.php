@@ -41,7 +41,7 @@
                       {{ $product->name }}
                       @endforeach  
                   </td>
-                  <td>{{ $inventario->stock }}</td>
+                  <td align="center">{{ $inventario->stock }}</td>
                   <td>@if ($inventario->status == 1)
                       Activo
                       @else
@@ -49,7 +49,7 @@
                       @endif
                   </td>
                   <td>
-                      <div class="d-flex justify-content-end">
+                      <div class="row justify-content-end">
                         <a href="{{ route('inventario.edit',$inventario) }}" class="btn btn-outline-info btn-sm mb-2 mx-4">Editar</a>
                       
                       </div>

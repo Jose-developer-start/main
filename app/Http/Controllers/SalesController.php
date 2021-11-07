@@ -18,12 +18,9 @@ class SalesController extends Controller
      */
     public function index()
     {
- $resultado =Sale::join("users", "sales.user_id", "=", "users.id")->select("*")
-->get();
- //->join("cursos", "cursos.id", "=", "alumno_curso.id_curso")
-   // $resultado = Alumno::join("asistencia", "asistencia.id_alumno", "=", "alumnos.id")
-//return $resultado;
-return view('admin.sales.sales_index',compact('resultado'));
+        $resultado =Sale::join("users", "sales.user_id", "=", "users.id")->select("*")
+        ->get();
+        return view('admin.sales.sales_index',compact('resultado'));
     }
 
     /**
@@ -53,9 +50,12 @@ return view('admin.sales.sales_index',compact('resultado'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Sale $sale)
     {
-        //
+        $result = $sale->join("users", "sales.user_id", "=", "users.id")->where('sales.id','=',$sale->id)->select("*")
+        ->get();
+        
+        return view('admin.sales.show',compact('result'));
     }
 
     /**

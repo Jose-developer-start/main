@@ -39,19 +39,19 @@
                   <td class="table-light">{{ $brand->id }}</td>
                   <td class="table-light">{{ $brand->brand_name }}</td>
                   <td class="table-light">
-
-
-                      <a href="{{ route('brands.edit',$brand) }}" class="btn btn-outline-info btn-sm mb-2"> <span style="font-size: 14px; color:#9BBFF0;">
-    <i class="fas fa-pen"></i>
-  </span></a>
-
-
-                      <form action="{{ route('brands.destroy',$brand) }}" method="POST">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger btn-sm mb-2 "><span style="font-size: 14px; color:red;">
-<i class="fas fa-trash"></i>
-</span></button>
-                      </form>
+                    <div class="row justify-content-center">
+                      <a href="{{ route('brands.edit',$brand) }}" class="btn btn-outline-info btn-sm mx-2"> <span style="font-size: 14px; color:#9BBFF0;">
+                        <i class="fas fa-pen"></i>
+                      </span></a>
+                    
+                    
+                        <form action="{{ route('brands.destroy',$brand) }}" method="POST">
+                          @csrf @method('DELETE')
+                          <button type="submit" class="btn btn-outline-danger btn-sm "><span style="font-size: 14px; color:red;">
+                          <i class="fas fa-trash"></i>
+                          </span></button>
+                        </form>
+                    </div>
                   </td>
                 </tr> 
                 @endforeach
