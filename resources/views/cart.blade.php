@@ -62,7 +62,7 @@
                             <div class="row">
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <div class="form-group row">
+                                    <div class="row " style="margin-left: 15px">
                                         <input type="hidden" value="{{ $item->id }}" id="id" name="id">
                                         <input type="number" min="1" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
@@ -88,13 +88,15 @@
             </div>
             @if(count($cartCollection)>0)
                 <div class="col-lg-5">
-                    <div class="card">
+                    <div class="card my-3">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>Total a pagar: </b>${{ \Cart::getTotal() }}</li>
                         </ul>
                     </div>
-                    <br><a href="{{ route('main.productos') }}" class="btn btn-dark">Continuar comprando</a>
-                    <a href="/checkout" class="btn btn-success">Proceder a pagar</a>
+                    <div class="d-flex-md justify-content-between">
+                        <a href="{{ route('main.productos') }}" class="btn btn-dark mr-2">Continuar comprando</a>
+                        <a href="/checkout" class="btn btn-success">Proceder a pagar</a>
+                    </div>
                 </div>
             @endif
         </div>

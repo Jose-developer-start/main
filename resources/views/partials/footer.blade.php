@@ -32,6 +32,6 @@
      
     </div>
     <div class="bg-light">
-      <p class="text-center p-2">Todos los derechos reservados para Tecn </p>
+      <p class="text-center p-2">Todos los derechos reservados para @Technoly Box</p>
     </div>
   </footer>
