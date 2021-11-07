@@ -14,19 +14,19 @@ class CategoryTableSeeder extends Seeder
     {
         DB::table('categories')->insert([
             'name' => 'Routers',
-            'image' => 'routers.png'
+            'image' => 'categories/yVhZZ3NSFaYmK4GmvaF4ly9e3ULUKAWujVxX6FPF.jpg'
         ]);
         DB::table('categories')->insert([
             'name' => 'Memorias USB',
-            'image' => 'Memorias USB.png'
+            'image' => 'categories/IuAE086p6c9pqwN2F3LHNT25KXYFBe7pLSqLkJRE.jpg'
         ]);
         DB::table('categories')->insert([
             'name' => 'Proyectores',
-            'image' => 'Proyectores.png'
+            'image' => 'categories/uduOW49qRp0AcOv3OyeGImn6t31NY3E38KfU8E5y.jpg'
         ]);
         DB::table('categories')->insert([
             'name' => 'Teclado',
-            'image' => 'Teclados.png'
+            'image' => 'categories/BszsKxCzg6jrJ2L8EFR2JkA3dsoGLbVn0ZOoz85O.jpg'
         ]);
 
     }

@@ -44,7 +44,7 @@ class ProductsTableSeeder extends Seeder
             'sale_price' => 5,
             'discount' =>0,
             'model' => 'at102md',
-            'image' => 'productos/IuL1SbJAtWdWep3btfaPtkLJhA7mNw2UtFGJQLlp.jpg',
+            'image' => 'productos/Ba0S3Vy7Oc69mXj8jO17T7g4mZbgH0fPQIEb6X3g.jpg',
             'brand_id' => 1,
             'supplier_id' => 1,
             'category_id' => 3

@@ -22,11 +22,11 @@ class CreateProductsTable extends Migration
             $table->integer('discount')->nullable();
             $table->string('model');
             $table->string('image');
-            $table->foreignId('brand_id')->references('id')->on('brands');
+            $table->foreignId('brand_id')->references('id')->on('brands')->onDelete('cascade');
 
-            $table->foreignId('supplier_id')->references('id')->on('suppliers');
+            $table->foreignId('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
             
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

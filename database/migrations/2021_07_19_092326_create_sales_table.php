@@ -21,7 +21,7 @@ class CreateSalesTable extends Migration
             $table->text('paypal_data');
             $table->integer('quanty_products');
             $table->tinyInteger('status');
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
         
             $table->timestamps();
         });
