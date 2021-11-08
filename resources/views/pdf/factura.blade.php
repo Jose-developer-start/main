@@ -18,7 +18,7 @@
                 <h3>Tecnology Box</h3>
                 <p>San Salvador</p>
                 
-                <p><b>Cliente: </b>{{ Auth::user()->name }}</p>
+                <p><b>Cliente: </b>{{ Auth::user()->name." ".Auth::user()->surname }}</p>
                 <p><b>Email: </b> {{ Auth::user()->email }} </p>
             </div>
               
@@ -45,7 +45,7 @@
                     <th scope="row">{{ $index + 1 }}</th>
                     <td>{{ $sale->name }}</td>
                     <td>${{ $sale->sale_price }}</td>
-                    <td>%{{ $sale->discount }}</td>
+                    <td>{{ $sale->discount }}%</td>
                     <td>{{ $sale->quanty }}</td>
                     <td>${{ $sale->quanty * $sale->unit_price }}</td>
                 </tr>
