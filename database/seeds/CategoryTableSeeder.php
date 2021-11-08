@@ -12,6 +12,7 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('categories')->insert([
             'name' => 'Routers',
             'image' => 'categories/yVhZZ3NSFaYmK4GmvaF4ly9e3ULUKAWujVxX6FPF.jpg'
