@@ -138,10 +138,10 @@
     </div>
 </section>
 </div>
-@if (session('welcome'))
+@if (session('register-new'))
     <script>
-        alertify.success('Bienvenido a la tienda');
-        //swal("Producto", "Agregado al carrito", "success");
+        //alertify.success('Bienvenido a la tienda');
+        swal("Bienvenido/a <?= Auth::user()->name.' '.Auth::user()->surname ?>", "Gracias por ser parte de Technology box!!", "success");
     </script>
   @endif
 @endsection
