@@ -29,7 +29,7 @@ class cartController extends Controller
                 ]
             )
         );
-        return redirect()->route('main.productos')->with('success','Agregado al carrito');
+        return redirect()->back()->with('success','Agregado al carrito');
         
     }
     public function update(){

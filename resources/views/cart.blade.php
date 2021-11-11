@@ -64,9 +64,9 @@
                                     {{ csrf_field() }}
                                     <div class="row " style="margin-left: 15px">
                                         <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                        <input type="number" min="1" class="form-control form-control-sm" value="{{ $item->quantity }}"
+                                        <input type="number" min="1" class="form-control form-control-sm update-card" value="{{ $item->quantity }}"
                                                id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
+                                        <button data-container="body" data-toggle="popover" data-placement="bottom" data-content="Actualizar producto" class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">

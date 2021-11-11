@@ -103,6 +103,7 @@ class ProductController extends Controller
         }
     }
     public function show_product(Product $product = null){//Routing model binding
+        
         return view('show-product', compact('product'));
     }
 

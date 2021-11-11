@@ -17,11 +17,15 @@
                 <img class="product-item-img" src="{{asset('storage/'.$product->image)}}" alt="">
             </div>
         </div>
+          
         <div class="col-12 col-sm-12 col-md-6 product-details">
-
-            <h1 class="product-item-title">{{ $product->name }}</h1>
-            <h2 class="product-item-detail">{{ $product->description }}</h2>
-            <p>Stock: {!! $product->stock->stock > 0 ? $product->stock->stock : '<span>No hay existencia</span>' !!}</p>
+            <h1 class="text-center mb-2" style="color: #333e48; font-size: 1.5rem">Especificaciones: </h1>
+            <h2 class="product-item-title">{{ $product->name }}</h2>
+            <h3 class="product-item-detail">{{ $product->description }}</h3>
+            <h5>Marca: {{ $product->brand->brand_name }}</h5>
+            <h5>Modelo: {{ $product->model }}</h5>
+            <h5>Proveedor: {{ $product->supplier->name }}</h5>
+            <p class="text-lead">Existencia: {!! $product->stock->stock > 0 ? '<span style="color: #198754; font-size: 1rem">'.$product->stock->stock.'</span>' : '<span>No hay existencia de este producto en nuestras tiendas</span>' !!}</p>
 
             @if($product->discount > 0)
             <span class="old-price">${{ $product->sale_price }}</span>
@@ -45,7 +49,8 @@
                 @endif
                 <input type="hidden" value="{{ $product->image }}" id="image" name="image">
                 <input type="hidden" value="1" id="quantity" name="quantity">
-                <button {{ $product->stock->stock > 0 ? '' : 'disabled' }} class="btn btn-success btn-block my-3" class="tooltip-test" title="add to cart">
+
+                <button data-container="body" data-toggle="popover" data-placement="bottom" data-content="Agregar a tus compras" {{ $product->stock->stock > 0 ? '' : 'disabled' }} class="btn btn-success btn-block my-3" class="tooltip-test" title="add to cart">
                     <i class="fa fa-shopping-cart"></i> Agregar
                 </button>
             </form>
