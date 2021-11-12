@@ -12,7 +12,7 @@ class generatorPDFController extends Controller
     public function __construct()
     {
         set_time_limit(300); //Aumentar limite
-        $this->middleware('auth');   
+        $this->middleware(['auth','roles:1,2']);   
     }
 
     public function factura(){

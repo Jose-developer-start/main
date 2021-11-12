@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class RolsController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware(['auth','roles:1']);
+    }
     /**
      * Display a listing of the resource.
      *

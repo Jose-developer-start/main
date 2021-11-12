@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Storage;
  
 class SupplierController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware(['auth','roles:1']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +21,7 @@ class SupplierController extends Controller
      */
     public function index()
     {
-         $suppliers = Supplier::all();
+        $suppliers = Supplier::all();
         return view('admin.suplier.index',compact('suppliers'));
     }
 

@@ -10,7 +10,7 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('roles:1');
+        return $this->middleware('roles:1');
     }
     /**
      * Display a listing of the resource.

@@ -54,7 +54,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/mystore','HomeController@dashboard')->name('mystore.home')->middleware('auth');
 
 /*+++++++++++++++++++++++++ Inicio Rutas de  proveedores administrador+++++++++++++++++++++++++*/
-Route::get('/mystore/proveedor','SupplierController@index')->name('suplier.index')->middleware('auth');
+Route::get('/mystore/proveedor','SupplierController@index')->name('suplier.index');
 Route::get('/mystore/proveedor/n','SupplierController@create')->name('suplier.create')->middleware('auth');
 Route::post('/mystore/proveedor/nuevo','SupplierController@store')->name('suplier.store')->middleware('auth');
 Route::get('/mystore/proveedor/{supplier}','SupplierController@edit')->name('suplier.edit')->middleware('auth');

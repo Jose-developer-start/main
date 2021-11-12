@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class PerfilController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware(['auth','roles:1,2']);
+    }
     /**
      * Display a listing of the resource.
      *
