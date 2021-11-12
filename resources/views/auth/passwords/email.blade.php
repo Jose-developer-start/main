@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+        <div class="col-md-7">
+            <div class="card my-5">
+                <div class="card-header">{{ __('Resetear contraseña') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,11 +14,11 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{ route('password.reset') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Dirección de Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -44,4 +44,10 @@
         </div>
     </div>
 </div>
+@if (session('send_reset_email'))
+    <script>
+        //alertify.success('Bienvenido a la tienda');
+        swal("Enviado!!", "Te hemos enviado un correo para restablecer tu contraseña", "success");
+    </script>
+@endif
 @endsection

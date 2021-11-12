@@ -143,5 +143,5 @@
         //alertify.success('Bienvenido a la tienda');
         swal("Bienvenido/a <?= Auth::user()->name.' '.Auth::user()->surname ?>", "Gracias por ser parte de Technology box!!", "success");
     </script>
-  @endif
+@endif
 @endsection

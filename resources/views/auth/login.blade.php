@@ -31,11 +31,17 @@
             </form>
             @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
+                    {{ __('Olvidades tu contraseña?') }}
                 </a>
             @endif
         </div>
     </div>
 </div>
+@if (session('updated-password'))
+    <script>
+        //alertify.success('Bienvenido a la tienda');
+        swal("Tu contraseña se ha modificado!!", "Inicia sesión nuevamente", "success");
+    </script>
+@endif
 @endsection
 

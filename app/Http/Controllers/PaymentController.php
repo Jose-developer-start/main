@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 /** Paypal Details classes **/
 use PayPal\Rest\ApiContext;
@@ -143,7 +144,21 @@ class PaymentController extends Controller
             return redirect('/checkout')->withError('El pago no se realizó correctamente.');
         }else{
             \Cart::clear();
+            $this->emailSale(['number_sale' => $newSale->id, 'email' => Auth::user()->email]);
             return redirect('/checkout')->withSuccess('Pago realizado con éxito');
         }
+    }
+    //Funcion para envios de mensajes por correo
+    public function emailSale($data){
+        $subject = "Compra de productos";
+
+        $for = $data['email'];
+
+        Mail::send('mails.emailSale',$data, function($msj) use($subject,$for){
+            $msj->from("josedeodanes55@outlook.com","Technoly BOX");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+        return redirect()->back();
     }
 }

@@ -165,3 +165,15 @@ Route::put('mi-perfil/{id}','PerfilController@update')->name("perfil.update");
 Route::get('facturas-compras','ComprasController@index')->name("reporte.index");
 //Ruta para generar facturas desde su historial de compra
 Route::get('factura-de-compra/{sale}','generatorPDFController@compra')->name("factura.compra");
+
+//Envio de correo
+
+Route::post('contact','MessagesSendController@contact')->name("contact");
+//Prueba
+Route::get('test','MessagesSendController@test')->name("email.test");
+
+//RESETEO DE CONTRASEÑA
+
+Route::post('password-reset','ResetPasswordController@password_reset')->name("password.reset");
+Route::get('password/update','ResetPasswordController@password_update')->name("password.edit");
+Route::post('password','ResetPasswordController@new_password')->name("pass.update");
