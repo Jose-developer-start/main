@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!----CEO---->
+    <meta name="author" content="Estudiantes de la Universidad Luterana Salvadoreña">
+    <meta name="description" content="Technology Box es una tienda en linea que ofrece productos de tecnología, como teclados, memorias, router, entre muchos dispositivos más y el metodo de pago es super seguro porque aceptamos PayPal.">
+    <meta property="og:title" content="Technology Box">
+
+    <link rel="shortcut icon" href="{{ asset('images/icon/logo.png') }}" type="image/x-icon">
+
+    <meta property="og:image" content="{{ asset('images/seo/products.png') }}">
+    <meta property="og:description" content="Technology Box es una tienda en linea que ofrece productos de tecnología, como teclados, memorias, router, entre muchos dispositivos más y el metodo de pago es super seguro porque aceptamos PayPal.">
+    <meta property="og:title" content="MyTienda-Tech">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
