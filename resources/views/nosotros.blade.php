@@ -8,11 +8,11 @@
         <div class="card3">
             <div class="card3-imagen ">
                 <h1 class="letrafondo  hero__title ">
-                    Technoly <span class="
+                    Technology <span class="
                ">box</span>
                 </h1>
             </div>
-            <img alt="" class="card-imagenredonda " src="{{ asset('images/tienda_virtual_images/banner1.jpg') }}">
+            <img alt="" class="" src="{{ asset('images/icon/logo.png') }}">
 
         </div>
     </header>

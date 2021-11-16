@@ -12,8 +12,12 @@ class ResetPasswordController extends Controller
         $data = Request()->validate([
             'email' => 'required'
         ]);
-        $this->send_email($data);
-        return redirect()->back()->with('send_reset_email','Correo enviado');
+        if(User::where('email',$data['email'])->exists()){
+            $this->send_email($data);
+            return redirect()->back()->with('send_reset_email','Correo enviado');
+        }else{
+            return redirect()->back()->with('error_reset_email','Correo enviado');
+        }
     }
 
     public function password_update(){

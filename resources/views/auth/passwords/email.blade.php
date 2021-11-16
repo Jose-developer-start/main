@@ -49,5 +49,10 @@
         //alertify.success('Bienvenido a la tienda');
         swal("Enviado!!", "Te hemos enviado un correo para restablecer tu contraseña", "success");
     </script>
+@elseif(session('error_reset_email'))
+    <script>
+        //alertify.success('Bienvenido a la tienda');
+        swal("Error!!", "Email no registrado!!", "error");
+    </script>
 @endif
 @endsection
