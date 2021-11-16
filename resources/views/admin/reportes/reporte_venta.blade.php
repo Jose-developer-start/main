@@ -6,13 +6,13 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Reportes</h1>
+      <h1><i class="far fa-file"></i> Reportes</h1>
       <p>Reportes</p>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active"><a href="#">Data Table</a></li>
+     <li class="breadcrumb-item"> <a href="/mystore" title=""> <i class="fa fa-home fa-lg"></i></a></li>
+
+      <li class="breadcrumb-item active"><a href="{{ route('sales.sales_index') }}">Ventas</a></li>
     </ul>
   </div>
   @include('admin.partials.notify')

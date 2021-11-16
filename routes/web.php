@@ -27,6 +27,10 @@ Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-paymen
 
 Route::get('/productos/{category?}','ProductController@show_products')->name('main.productos');
 Route::get('/ver/{product?}','ProductController@show_product')->name('showProduct');
+Route::get('/nosotros','ProductController@nosotros')->name('main.nosotros');
+Route::get('/politicas','ProductController@politicas')->name('politicas.politicas');
+Route::get('/condiciones','ProductController@condiciones')->name('politicas.condiciones');
+Route::get('/como_comprar','ProductController@como_comprar')->name('politicas.como_comprar');
 /*+++++++++++++++++++++++++ Inicio Rutas de  paypal++++++++++++++++++++++++++++++++++++*/
 
 /*--------------------------------------------------------------------------------------*/

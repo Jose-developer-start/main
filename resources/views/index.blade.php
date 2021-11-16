@@ -3,6 +3,14 @@
 @section('title','Technology Box')
 
 @section('content')
+ <!-- boton flotante de whatsapp-->
+ <a class="float"
+ href="https://api.whatsapp.com/send?phone=50371381006&text=Hola,%20bienvenidos%20a%20nuestro%20%20WhasatsApp,%20realiza%20tu%20consuta,%20te%20atenderemos%20rapidamente."
+ target="_blank">
+ <i class="fab fa-whatsapp my-float fa-1x">
+ </i>
+</a>
+<!-- ceramos el  flotante de whatsapp-->
 <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -31,6 +39,12 @@
         </a>
       </div>
 </header>
+<!-- boton flotante de whatsapp-->
+<a class="float" href="https://api.whatsapp.com/send?phone=50371381006&text=Hola,%20bienvenidos%20a%20nuestro%20%20WhasatsApp,%20realiza%20tu%20consuta,%20te%20atenderemos%20rapidamente." target="_blank">
+    <i class="fab fa-whatsapp my-float fa-1x">
+    </i>
+</a>
+<!-- ceramos el  flotante de whatsapp-->
 <div class="container">
   <section>
     <h2 class="p-3 text-center">Comprar por categoria</h2>
@@ -112,19 +126,74 @@
         @endforeach
     </div>
 </section>
-<section class="container-fluid">
-    <h2 class="text-center p-3">Nuestras marcas</h2>
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 mb-3">
-            <img class="img-thumbnail" src="{{asset('images/lg.png')}}" alt="">
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 mb-3">
-            <img class="img-thumbnail" src="{{asset('images/nexxt-logo.png')}}" alt="">
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 mb-3">
-            <img class="img-thumbnail" src="{{asset('images/kingston-logo.png')}}" alt="">
+
+<section class="section-desing">
+<div class="container">
+<div class="row">
+    <div class="text-center pb-3 pt-3 ">
+        <h2 class="text-center pb-2 pt-2 h3 size-letra">
+            Las mesjores Marcas.
+        </h2>
+        <p class="size-parrafo">
+
+ La tecnología avanza muy rápido, por eso los productos que ofrece Technology Box, tenemos las marcas más reconocidas Y mejores en tecnología.
+
+        </p>
+    </div>
+    <!-- TARJETA-1 -->
+    <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center p-2">
+        <div class="card card-border boreder-radio" style="width: 18rem;">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/lg.png')}}">
+
         </div>
     </div>
+    <!-- TARJETA-3 -->
+    <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center p-3">
+        <div class="card card-border boreder-radio" style="width: 18rem;">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/nosotros/logo-HP.png')}}">
+
+        </div>
+    </div>
+    <!-- TARJETA-3 -->
+    <div class="col-12 col-md-12 col-lg-4 d-flex flex-column align-items-center p-3">
+        <div class="card card-border boreder-radio" style="width: 18rem;">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/nosotros/chiston.png')}}">
+
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section class="section-desing" id="personas">
+<div class="container pt-2">
+<div class="contenedor1">
+    <div class="triangulo">
+        <div class="div1_1">
+            <div>
+            </div>
+            <h2>
+           Historia
+            </h2>
+
+            <p>
+                <span style="font-size: 42px; color: blue;"> <b> 10 </b>  </span>  Años de experiencia en la venta de dispositivos informáticos y artículos tecnológicos de oficina, hogar, escolar, entretenimiento, satisfaciendo las necesidades de los clientes.
+            </p>
+          <a href=" {{ route('main.nosotros') }}" title="" class="btn btn-outline-info"> Ver mas</a>
+        </div>
+        <div class="div1">
+            <div class="div1-1">
+                <div class="div2">
+                    <img src="{{asset('images/nosotros/dispositivos.jpg')}}">
+
+                </div>
+                <div class="div3">
+                    <img src="{{asset('images/nosotros/electronicos2.jpg')}}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
 <section class="container bg-newsletter mb-3">
     <h2 class="text-center p-3">Enterate de las novedades</h2>
