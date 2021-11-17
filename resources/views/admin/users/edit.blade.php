@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <form action="{{ route('user.update',$user) }}" method="POST" enctype="multipart/form-data">
+        <form class="text-center" action="{{ route('user.update',$user) }}" method="POST" enctype="multipart/form-data">
           @csrf @method('PUT')
           @include('admin.users._form')
           <div class="tile-footer">

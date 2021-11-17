@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <form action="{{ route('product.update',$product) }}" method="POST" enctype="multipart/form-data">
+        <form  class=" shadow rounded py-3 px-4 text-center" action="{{ route('product.update',$product) }}" method="POST" enctype="multipart/form-data">
           @csrf @method('PUT')
           @include('admin.product._form')
           <div class="tile-footer">
