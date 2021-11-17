@@ -39,7 +39,7 @@
                                 a defectos de fábrica irreparables o porque el cliente desea cambiarlo de color, tamaño
                                 etc.<br />A continuación se detallan las políticas a tener en cuenta para realizar un
                                 cambio:</p>
-                            <ol class="ordered-sub-sub-list">
+                            <ol>
                                 <li>
                                     <p>Se aceptarán cambios de artículos por defectos de fábrica o por cambio de opinión del
                                         Cliente.</p>

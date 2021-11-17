@@ -26,7 +26,7 @@
             <div class="col-sm-12 text-center col-md-12" style="height: 150px;">
 
                 <h1 class="m-5">
-                    <a href="https://drive.google.com/file/d/1YspiN5LCFCgtDKARLt6NZXnlkSkCprPQ/view?usp=sharing" title="">
+                    <a href="https://drive.google.com/file/d/1dlR9pd14bIpZQLd_ZRf8GJiK3tA3Xc5N/view?usp=sharing" title="">
                         Manual como comprar Technology Box</a>
                 </h1>
             </div>

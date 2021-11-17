@@ -16,7 +16,7 @@
                     <ul class="group-link">
                         <li><a class="link" href="{{ route('politicas.politicas') }}">Políticas
                                 Génerales</a></li>
-                        <li><a class="link" href="{{ route('politicas.condiciones') }}">Devoluciones y
+                       <li><a class="link" href="{{ route('politicas.condiciones') }}">Devoluciones y
                                 cambios</a></li>
 
 
