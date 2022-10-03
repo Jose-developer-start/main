@@ -143,21 +143,27 @@
     <!-- TARJETA-1 -->
     <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center p-2">
         <div class="card card-border boreder-radio" style="width: 18rem;">
-            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/lg.png')}}">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/proveedores/nautica.png')}}">
 
         </div>
     </div>
     <!-- TARJETA-3 -->
     <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center p-3">
         <div class="card card-border boreder-radio" style="width: 18rem;">
-            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/nosotros/logo-HP.png')}}">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/proveedores/nike.png')}}">
 
         </div>
     </div>
     <!-- TARJETA-3 -->
     <div class="col-12 col-md-12 col-lg-4 d-flex flex-column align-items-center p-3">
         <div class="card card-border boreder-radio" style="width: 18rem;">
-            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/nosotros/chiston.png')}}">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/proveedores/polo.png')}}">
+
+        </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 d-flex flex-column align-items-center p-3">
+        <div class="card card-border boreder-radio" style="width: 18rem;">
+            <img alt="..." class="card-img-top size-imagen" src="{{asset('images/proveedores/puma.png')}}">
 
         </div>
     </div>
